@@ -1,11 +1,12 @@
 $( document ).ready(function() {
   $( ".sortable" ).sortable();
   $( ".sortable" ).disableSelection();
-  // $('li').first().css("background", "red");
-  $(document).on('click', function(event) {
-    console.log(event.target.nodeName);
-  });
+  $('li').filter(":nth-child(1)").addClass("primary-option"); // Selects only the first element of the word lists
+  clickDrag();
 
+});
+
+function clickDrag() {
   var isDragging = false;
   $("li")
   .mousedown(function() {
@@ -18,22 +19,10 @@ $( document ).ready(function() {
     var wasDragging = isDragging;
     isDragging = false;
     if (wasDragging) {
-      setTimeout(function() {
-        $('li').first().addClass("primary-option");
-        $('li').not(":nth-child(1)").removeClass("primary-option");
+      setTimeout(function() { // Timeout adds a one(1) milisecond delay to this function executing
+        $('li').filter(":nth-child(1)").addClass("primary-option"); // Selects only the first element of the list
+        $('li').not(":nth-child(1)").removeClass("primary-option"); // Selects everything but the first element of the list
       }, 1);
-    }
-  })
-
-
-});
-
-// $(document).on('mouseup', function() {
-//   $('li').first().css("background", "red");
-// })
-
-// function ifFirst() {
-//   if ($('li').first() === true) {
-//     console.log(this);
-//   };
-// }
+    };
+  });
+}
