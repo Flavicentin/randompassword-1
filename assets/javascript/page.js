@@ -3,6 +3,9 @@ $( document ).ready(function() {
   $( ".sortable" ).disableSelection();
   $('li').filter(":nth-child(1)").addClass("primary-option"); // Selects only the first element of the word lists
   clickDrag();
+// For these, panelCount = num of Panels + 1
+  $("#left-col").drum({ panelCount: 8 });
+  $("#mid-col").drum({ panelCount: 8 });
   $("#right-col").drum({ panelCount: 8 });
 });
 

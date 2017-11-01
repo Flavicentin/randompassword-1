@@ -98,6 +98,7 @@ div.drum figure {
 	left: 0px;
 	top: 0px;
 	line-height: 20px;
+	font-size: 2rem;
 	color: black;
 	margin: 0px;
 	padding: 0px 3px;
@@ -105,10 +106,10 @@ div.drum figure {
 	white-space: nowrap;
 	overflow: hidden;
 	width: 100%;
-	text-align: left;
+	text-align: center;
 }
 
 div.drum-wrapper div.container, div.drum-wrapper figure {
-	height: 25px;
+	height: 3rem;
 	line-height: 25px;
 }
