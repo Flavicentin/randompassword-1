@@ -1,0 +1,17 @@
+.array-letter {
+  position: relative;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 6vmin;
+  display: inline-block;
+}
+
+.letter-container {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%);
+  overflow: visible;
+  height: 100%;
+  white-space: nowrap;
+
+}
