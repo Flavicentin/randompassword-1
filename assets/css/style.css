@@ -3,3 +3,11 @@
   padding: 0px;
   margin: 0px;
 }
+
+.word-option {
+  background-color: #d3d3d3;
+}
+
+.primary-option {
+  background: red;
+}
