@@ -3,3 +3,18 @@
   padding: 0px;
   margin: 0px;
 }
+
+.display li {
+  display: inline;
+}
+
+.word-option {
+  background-color: #d3d3d3;
+  text-align: center;
+}
+
+.primary-option {
+  background: red;
+  margin-bottom: 25px;
+  font-size: 30px;
+}
