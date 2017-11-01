@@ -3,7 +3,7 @@ $( document ).ready(function() {
   $( ".sortable" ).disableSelection();
   $('li').filter(":nth-child(1)").addClass("primary-option"); // Selects only the first element of the word lists
   clickDrag();
-
+  $("#right-col").drum({ panelCount: 8 });
 });
 
 function clickDrag() {
