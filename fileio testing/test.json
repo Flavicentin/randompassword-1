@@ -1,0 +1,9 @@
+{
+	"Google": {
+		"minLetters": 8
+	},
+	"Facebook": {
+		"minLetters": 8,
+		"allowWords": true
+	}
+}
