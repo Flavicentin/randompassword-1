@@ -26,3 +26,9 @@ function clickDrag() {
     };
   });
 }
+
+// Arrays of IDS
+
+var leftColId = ["left1", "left2", "left3", "left4", "left5", "left6"];
+var midColId = ["mid1", "mid2", "mid3", "mid4", "mid5","mid6"];
+var rightColId = ["right1", "right2", "right3", "right4", "right5", "right6"];
