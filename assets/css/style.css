@@ -43,6 +43,11 @@
   color: black;
 }
 
+*:focus {
+  outline: none;
+  border-color: #4aaaa5;
+}
+
 /*.confirm {
   position: relative;
   top: 30px;
