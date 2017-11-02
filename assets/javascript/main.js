@@ -17,10 +17,6 @@ $(document).ready(function(){
     $(elem).addClass('red');
   });
 
-  document.onkeyup = function(event) {
-	console.log(getWordLists(8, 16, 6));
-  };
-
 });
 
 
