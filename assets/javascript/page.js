@@ -1,4 +1,8 @@
-import {disp} from './final_disp.js';
+// import {disp} from './final_disp.js';
+import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
+
+//var numWordOptions = 8;
+//var wordLists = getWordLists(8, 16, numWordOptions);
 
 $( document ).ready(function() {
   // $( ".sortable" ).sortable();
@@ -10,18 +14,40 @@ $( document ).ready(function() {
     }).disableSelection();
 
 // For these, panelCount = num of word options + 1
-  $("#left-col").drum({ panelCount: 8 });
-  $("#mid-col").drum({ panelCount: 8 });
-  $("#right-col").drum({ panelCount: 8 });
+  var numWordOptions = 8;
+  var wordLists = getWordLists(8, 16, numWordOptions);
+
+  for (var i = 0; i < wordLists.length; i++) {
+    var outerCol = $("<div>");
+    outerCol.addClass("col-md-" + Math.floor(12 / wordLists.length) + " outside");
+    var select = $("<select>");
+    select.attr("name", ("drum-select-" + i));
+    outerCol.append(select);
+    for (var j = 0; j < numWordOptions; j++) {
+      var word = wordLists[i][j].charAt(0).toUpperCase() + wordLists[i][j].substring(1);
+      var option = $("<option>");
+      option.attr("value", word);
+      option.text(word);
+      select.append(option);
+      //select.append($("<option>").attr("value", word).text(word));
+    }
+    $("#selector-row").append(outerCol);
+    select.drum({panelCount: numWordOptions});
+  }
+
+  //$("#left-col").drum({ panelCount: numWordOptions });
+  //$("#mid-col").drum({ panelCount: numWordOptions });
+  //$("#right-col").drum({ panelCount: numWordOptions });
 
   $('.carousel').carousel('pause');
 
-  $('#confirm-2').on('click', disp());
+  // $('#confirm-2').on('click', disp());
 
     // console.log(dispStr);
     // console.log($('select[name=left-column]').val());
     // console.log($('select[name=mid-column]').val());
     // console.log($('select[name=right-column]').val());
+
 });
 
 
@@ -47,8 +73,3 @@ $( document ).ready(function() {
 //   });
 // }
 
-// Arrays of IDS
-
-var leftColId = ["left1", "left2", "left3", "left4", "left5", "left6", "left7"];
-var midColId = ["mid1", "mid2", "mid3", "mid4", "mid5","mid6", "mid7"];
-var rightColId = ["right1", "right2", "right3", "right4", "right5", "right6", "right7"];
