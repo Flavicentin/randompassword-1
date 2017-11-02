@@ -1,5 +1,9 @@
-function disp(){
-  var dispStr = $('select[name=left-column]').val() + $('select[name=mid-column]').val() + $('select[name=right-column]').val();
+function disp(numDrums){
+  //var dispStr = $('select[name=left-column]').val() + $('select[name=mid-column]').val() + $('select[name=right-column]').val();
+  var dispStr = "";
+  for (var i = 0; i < numDrums; i++) {
+  	dispStr += $("select[name=drum-select-" + i).val();
+  }
   var dispArr = dispStr.split("");
   console.log(dispArr);
   $('#sortable3').html('<li class="ui-state-highlight">' + dispArr[0] + '</li>');
