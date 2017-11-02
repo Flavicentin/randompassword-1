@@ -1,10 +1,6 @@
 
 import {disp, finalStr} from './final_disp.js';
-// import {disp} from './final_disp.js';
 import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
-
-//var numWordOptions = 8;
-//var wordLists = getWordLists(8, 16, numWordOptions);
 
 $( document ).ready(function() {
   // $( ".sortable" ).sortable();
@@ -51,8 +47,6 @@ $( document ).ready(function() {
     finalStr();
   });
 
-  // $('#confirm-2').on('click', disp());
-
     // console.log(dispStr);
     // console.log($('select[name=left-column]').val());
     // console.log($('select[name=mid-column]').val());
@@ -82,4 +76,3 @@ $( document ).ready(function() {
 //     };
 //   });
 // }
-
