@@ -4,9 +4,7 @@
 function getWords(numLetters, wordArray) {
     var req = new XMLHttpRequest();
     var sURL = "../assets/word_banks/words_" + numLetters + ".txt";
-    req.open("GET", sURL, true);
-    req.send(null);
-
+    req.timeout = 100;
     req.onreadystatechange = function () {
         if (req.readyState === 4 && req.status === 200) {
             var type = req.getResponseHeader('Content-Type');
@@ -22,6 +20,12 @@ function getWords(numLetters, wordArray) {
         }
         console.log("Status: " + req.status);
     }
+    req.ontimeout = function (e) {
+        console.log("Request Timed Out");
+    };
+
+    req.open("GET", sURL, true);
+    req.send();
 };
 
 export {getWords};
