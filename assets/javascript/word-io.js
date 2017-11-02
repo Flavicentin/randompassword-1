@@ -6,7 +6,7 @@ function getWords(numLetters, wordArray) {
     var sURL = "./words_" + numLetters + ".txt";
     req.open("GET", sURL, true);
     req.send(null);
-    
+
     req.onreadystatechange = function () {
         if (req.readyState === 4 && req.status === 200) {
             var type = req.getResponseHeader('Content-Type');
@@ -21,6 +21,6 @@ function getWords(numLetters, wordArray) {
             }
         }
     }
-}
+};
 
-export getWords;
+export {getWords};

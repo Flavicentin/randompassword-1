@@ -1,3 +1,5 @@
+import {getWords} from './word-io.js';
+
 
 var words4 = [];
 var words5 = [];
@@ -96,7 +98,7 @@ function getWordLists(minLength, maxLength, listLength) {
 			for (var k = 0; k < list.length; k++) {
 				wordPool.push(list[k]);
 			}
-			
+
 		}
 		max += poolMax;
 		min += poolMin;
@@ -104,5 +106,6 @@ function getWordLists(minLength, maxLength, listLength) {
 	}
 	return wordLists;
 }
+const test = 'test string';
 
-export { getWordsOfLength, getXWordsFromList, getWordLists };
+export {test};

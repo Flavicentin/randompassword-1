@@ -3,7 +3,9 @@
 //IMPORTANT! index.html must be running on a server to use modules
 
 import {opening} from "./opening.js";
+import {test} from  "./generator.js";
 
+console.log(test);
 
 
 
