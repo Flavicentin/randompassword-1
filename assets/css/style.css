@@ -39,4 +39,11 @@
 
 .primarySortable li {
   font-size: 3rem;
+  background: white;
+  color: black;
 }
+
+/*.confirm {
+  position: relative;
+  top: 30px;
+}*/

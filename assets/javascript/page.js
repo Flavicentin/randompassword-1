@@ -1,4 +1,4 @@
-import {disp} from './final_disp.js';
+import {disp, finalStr} from './final_disp.js';
 
 $( document ).ready(function() {
   // $( ".sortable" ).sortable();
@@ -16,7 +16,13 @@ $( document ).ready(function() {
 
   $('.carousel').carousel('pause');
 
-  $('#confirm-2').on('click', disp());
+  $('#confirm-2').on('click', function() {
+    disp();
+  });
+
+  $('#confirm-3').on('click', function() {
+    finalStr();
+  });
 
     // console.log(dispStr);
     // console.log($('select[name=left-column]').val());
