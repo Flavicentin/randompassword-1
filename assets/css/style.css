@@ -34,4 +34,9 @@
 .connectedSortable li {
   display: inline;
   font-size: 2rem;
+  padding: 2px;
+}
+
+.primarySortable li {
+  font-size: 3rem;
 }
