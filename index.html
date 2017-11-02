@@ -9,13 +9,13 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="./assets/javascript/page.js"></script>
-		<link rel="stylesheet" href="./assets/css/style.css">
 		<!-- <script type="module" src="./assets/javascript/main.js"></script> -->
 <!-- Drum Stuffs -->
 		<script type="text/javascript" src="./assets/javascript/drum/drum.js"></script>
 		<script type="text/javascript" src="./assets/javascript/drum/Hammer/Hammer.min.js"></script>
 		<script type="text/javascript" src="./assets/javascript/drum/Hammer/Hammer.fakemulti.js"></script>
 		<link rel="stylesheet" href="./assets/javascript/drum/drum.css">
+		<link rel="stylesheet" href="./assets/css/style.css">
 		<title>GuileCat</title>
 	</head>
 	<body>
@@ -99,7 +99,36 @@
 								</div> <!-- Close Selector Panel Row -->
 					    </div>
 					    <div class="carousel-item">
-								<button id="confirm-3" type="button" class="btn-block btn btn-primary btn-lg confirm">Confirm</button>
+<!-- Open Carousel Row -->
+								<div class="row">
+									<div class="col-md-12">
+<!-- Open symbols row -->
+										<div class="row">
+											<ul id="sortable1" class="connectedSortable">
+<!-- List of common symbols and other things -->
+												<li class="ui-state-default">Item 1</li>
+												<li class="ui-state-default">Item 2</li>
+												<li class="ui-state-default">Item 3</li>
+												<li class="ui-state-default">Item 4</li>
+												<li class="ui-state-default">Item 5</li>
+											</ul>
+										</div> <!-- Close symbols row -->
+<!-- Open User Password Row -->
+										<div class="row">
+											<ul id="sortable2" class="connectedSortable">
+<!-- Will need to generate these list items based on the password selected earlier -->
+												<li class="ui-state-highlight">Item 1</li>
+												<li class="ui-state-highlight">Item 2</li>
+												<li class="ui-state-highlight">Item 3</li>
+												<li class="ui-state-highlight">Item 4</li>
+												<li class="ui-state-highlight">Item 5</li>
+											</ul>
+										</div> <!-- Close User Password Row -->
+										<div class="row">
+											<button id="confirm-3" type="button" class="btn-block btn btn-primary btn-lg confirm">Confirm</button>
+										</div>
+									</div>
+								</div> <!-- Close Carousel Row -->
 					    </div>
 					  </div>
 <!-- Carousel Control Buttons -->
@@ -114,9 +143,7 @@
 					</div>
 <!-- Open Display Row -->
 					<div class="row">
-						<ul class="sortable display">
 
-						</ul>
 					</div> <!-- Close Display Row -->
 
 				</div>

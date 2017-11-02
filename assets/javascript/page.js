@@ -3,9 +3,11 @@ $( document ).ready(function() {
   // $( ".sortable" ).disableSelection();
   // $('li').filter(":nth-child(1)").addClass("primary-option"); // Selects only the first element of the word lists
   // clickDrag();
+  $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
 
-
-// For these, panelCount = num of Panels + 1
+// For these, panelCount = num of word options + 1
   $("#left-col").drum({ panelCount: 8 });
   $("#mid-col").drum({ panelCount: 8 });
   $("#right-col").drum({ panelCount: 8 });
