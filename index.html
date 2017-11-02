@@ -6,6 +6,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="./assets/javascript/page.js"></script>
 		<link rel="stylesheet" href="./assets/css/style.css">
 		<!-- <script type="module" src="./assets/javascript/main.js"></script> -->
@@ -23,7 +25,7 @@
 				<h1 class="display-3">GuileCat</h1>
 					<p class="lead">The random, secure, and memorable password generator.</p>
 				<hr class="my-4">
-					<p>I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time! I am your king. Well, Mercia's a temperate zone! Who's that then? It's only a model. Now, look here, my good man. Burn her! Knights of Ni, we are but simple travelers who seek the enchanter who lives beyond these woods.</p>
+
 					<p class="lead">
 					<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 				</p>
@@ -31,57 +33,92 @@
 <!-- Open Generator Panel -->
 			<div class="row">
 				<div class="col-md-12">
+<!-- Carousel -->
+					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+					  <div class="carousel-inner">
+					    <div class="carousel-item active">
+								<p>I don't want to talk to you no more, you empty-headed animal food trough water! I fart in your general direction! Your mother was a hamster and your father smelt of elderberries! Now leave before I am forced to taunt you a second time! I am your king. Well, Mercia's a temperate zone! Who's that then? It's only a model. Now, look here, my good man. Burn her! Knights of Ni, we are but simple travelers who seek the enchanter who lives beyond these woods.</p>
+								<button id="confirm-1" type="button" class="btn-block btn btn-primary btn-lg confirm">Confirm</button>
+					    </div>
+					    <div class="carousel-item">
+<!-- Selector Panel Row -->
+								<div class="row">
+									<div class="col-md-12">
+<!-- Open Selector Row -->
+										<div class="row">
+<!-- Open Left Column of Generator -->
+											<div id="col-1" class="col-md-4">
+												<div class="outside">
+													<select id="left-col" name="left-column">
+														<option id="left1" value="Rent">Rent</option>
+														<option id="left2" value="Vent">Vent</option>
+														<option id="left3" value="Meant">Meant</option>
+														<option id="left4" value="Went">Went</option>
+														<option id="left5" value="Sent">Sent</option>
+														<option id="left6" value="Dent">Dent</option>
+														<option id="left7" value="Lent">Lent</option>
+													</select>
+												</div>
+											</div>
+<!-- Open Center Column of Generator -->
+											<div id="col-2" class="col-md-4">
+												<div class="outside">
+													<select id="mid-col" name="mid-column">
+														<option id="mid1" value="Rent">Rent</option>
+														<option id="mid2" value="Vent">Vent</option>
+														<option id="mid3" value="Meant">Meant</option>
+														<option id="mid4" value="Went">Went</option>
+														<option id="mid5" value="Sent">Sent</option>
+														<option id="mid6" value="Dent">Dent</option>
+														<option id="mid7" value="Lent">Lent</option>
+													</select>
+												</div>
+											</div>
+<!-- Open Right Column of Generator -->
+											<div id="col-3" class="col-md-4">
+												<div class="outside">
+													<select id="right-col" name="right-column">
+														<option id="right1" value="Rent">Rent</option>
+														<option id="right2" value="Vent">Vent</option>
+														<option id="right3" value="Meant">Meant</option>
+														<option id="right4" value="Went">Went</option>
+														<option id="right5" value="Sent">Sent</option>
+														<option id="right6" value="Dent">Dent</option>
+														<option id="right7" value="Lent">Lent</option>
+													</select>
+												</div>
+											</div>
+										</div> <!-- Close Selector Row -->
+<!-- Open Confirm Button Row -->
+										<div class="row">
+											<div class="col-md-12">
+												<button id="confirm-2" type="button" class="btn-block btn btn-primary btn-lg confirm">Confirm</button>
+											</div>
+										</div> <!-- Close Confirm Button Row -->
+									</div>
+								</div> <!-- Close Selector Panel Row -->
+					    </div>
+					    <div class="carousel-item">
+								<button id="confirm-3" type="button" class="btn-block btn btn-primary btn-lg confirm">Confirm</button>
+					    </div>
+					  </div>
+<!-- Carousel Control Buttons -->
+					  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+					    <span class="carousel-control-prev-icon carou-control" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+					    <span class="carousel-control-next-icon carou-control" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
+					</div>
 <!-- Open Display Row -->
 					<div class="row">
 						<ul class="sortable display">
 
 						</ul>
 					</div> <!-- Close Display Row -->
-<!-- Open Selector Row -->
-					<div class="row">
-<!-- Open Left Column of Generator -->
-						<div id="col-1" class="col-md-4">
-							<div class="outside">
-								<select id="left-col" name="left-column">
-									<option id="left1"value="">Rent</option>
-									<option id="left2" value="">Vent</option>
-									<option id="left3" value="">Meant</option>
-									<option id="left4" value="">Went</option>
-									<option id="left5" value="">Sent</option>
-									<option id="left6" value="">Dent</option>
-									<option id="left7" value="">Lent</option>
-								</select>
-							</div>
-						</div>
-<!-- Open Center Column of Generator -->
-						<div id="col-2" class="col-md-4">
-							<div class="outside">
-								<select id="mid-col" name="mid-column">
-									<option id="mid1"value="">Rent</option>
-									<option id="mid2" value="">Vent</option>
-									<option id="mid3" value="">Meant</option>
-									<option id="mid4" value="">Went</option>
-									<option id="mid5" value="">Sent</option>
-									<option id="mid6" value="">Dent</option>
-									<option id="mid7" value="">Lent</option>
-								</select>
-							</div>
-						</div>
-<!-- Open Right Column of Generator -->
-						<div id="col-3" class="col-md-4">
-							<div class="outside">
-								<select id="right-col" name="right-column">
-									<option id="right1"value="">Rent</option>
-									<option id="right2" value="">Vent</option>
-									<option id="right3" value="">Meant</option>
-									<option id="right4" value="">Went</option>
-									<option id="right5" value="">Sent</option>
-									<option id="right6" value="">Dent</option>
-									<option id="right7" value="">Lent</option>
-								</select>
-							</div>
-						</div>
-					</div> <!-- Close Selector Row -->
+
 				</div>
 			</div> <!-- Close Generator Panel -->
 		</div> <!-- Close Global Box -->
