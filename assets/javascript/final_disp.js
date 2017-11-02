@@ -13,11 +13,19 @@ function disp(numDrums){
 };
 
 function finalStr() {
-  $('#sortable3').children().contents().each(function() {
-    //var disp = Str.concat();
- 	console.log($(this).text);
-    //console.log(disp);
+  var finArr = []
+  $('#sortable3').children().each(function() {
+    finArr.push($(this).text());
   });
+  var Str = finArr.join("");
+  console.log(Str);
+  $('#popdisp').prepend('<div class="pop-up"></div>')
+  var pop = $('.pop-up');
+  pop.css({"position":"absolute", "top": "30%", "left":"45%", "height":"30%", "width":"40%", "background-color": "white", "border": "black 5px solid"});
+  pop.append('<div class="pop-text"></div>');
+  var ptxt = $('.pop-text');
+  ptxt.text("Your secure password is:");
+  ptxt.css();
 };
 
 export {disp, finalStr};
