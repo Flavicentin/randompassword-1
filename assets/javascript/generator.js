@@ -1,3 +1,5 @@
+import {getWords} from './word-io.js';
+
 
 var words4 = [];
 var words5 = [];
@@ -41,7 +43,7 @@ function getWordsOfLength(length) {
 	} else {
 		return [];
 	}
-}
+};
 
 function getXWordsFromList(x, list) {
 	var result = [];
@@ -55,7 +57,23 @@ function getXWordsFromList(x, list) {
 		}
 	}
 	return result;
-}
+};
+
+// takes an array as input, shuffles it, and returns the same array (modifies the input)
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  while (0 !== currentIndex) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+};
 
 // takes minimum and maximum password length and desired length of each output list as parameters
 // returns an array of word arrays
@@ -96,13 +114,13 @@ function getWordLists(minLength, maxLength, listLength) {
 			for (var k = 0; k < list.length; k++) {
 				wordPool.push(list[k]);
 			}
-			
+
 		}
 		max += poolMax;
 		min += poolMin;
 		wordLists[i] = (getXWordsFromList(listLength, wordPool));
 	}
-	return wordLists;
-}
+	return shuffle(wordLists);
+};
 
-export { getWordsOfLength, getXWordsFromList, getWordLists };
+export {getWordsOfLength, getXWordsFromList, getWordLists};
