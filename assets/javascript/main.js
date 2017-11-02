@@ -3,15 +3,7 @@
 //IMPORTANT! index.html must be running on a server to use modules
 
 import {opening} from "./opening.js";
-import {test} from  "./generator.js";
-
-console.log(test);
-
-
-
-
-
-
+import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
 
 
 $(document).ready(function(){
@@ -25,7 +17,9 @@ $(document).ready(function(){
     $(elem).addClass('red');
   });
 
-
+  document.onkeyup = function(event) {
+	console.log(getWordLists(8, 16, 6));
+  };
 
 });
 

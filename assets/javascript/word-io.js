@@ -3,7 +3,7 @@
 // will not happen instantaneously
 function getWords(numLetters, wordArray) {
     var req = new XMLHttpRequest();
-    var sURL = "./words_" + numLetters + ".txt";
+    var sURL = "../assets/word_banks/words_" + numLetters + ".txt";
     req.open("GET", sURL, true);
     req.send(null);
 
