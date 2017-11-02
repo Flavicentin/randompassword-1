@@ -1,5 +1,6 @@
 import {disp, finalStr} from './final_disp.js';
 import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
+import {passLength, sliderStart} from './length-slider.js';
 
 $( document ).ready(function() {
   //activate lenght selection slider
