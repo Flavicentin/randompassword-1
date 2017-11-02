@@ -1,3 +1,8 @@
+html {
+  font-size: 10px;
+}
+
+
 .array-letter {
   position: relative;
   font-family: 'Helvetica', sans-serif;
@@ -11,7 +16,42 @@
   left: 50%;
   transform: translate(-50%);
   overflow: visible;
-  height: 100%;
   white-space: nowrap;
 
+}
+
+.word-box {
+  font-family: Helvetica, sans-serif;
+  font-size: 3rem;
+  line-height: 4rem;
+}
+
+.drag-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 53rem;
+  border: 1px solid red;
+  padding: 2rem;
+
+}
+
+.center-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: lightgrey;
+  height: 6rem;
+  width: 50%;
+  z-index: -3;
+  transform: translate(-50%, -50%);
+}
+
+p {
+  z-index: 5;
+}
+
+.red {
+  color: red;
 }

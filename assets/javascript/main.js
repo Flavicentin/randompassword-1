@@ -2,13 +2,26 @@
 //below is an example of module import
 //IMPORTANT! index.html must be running on a server to use modules
 
-import {helloWorld, example} from "./export-example.js";
 import {opening} from "./opening.js";
 
 
-//
+
+
+
+
+
+
 
 $(document).ready(function(){
+
+  $(".word-box").draggable({axis: 'y', containment: "parent"});
+
+  $(".drag-container").mouseup(function(){
+    $(".red").removeClass('red');
+    var elem = document.elementFromPoint((window.innerWidth / 2), window.innerHeight /2);
+    console.log(elem);
+    $(elem).addClass('red');
+  });
 
 
 
