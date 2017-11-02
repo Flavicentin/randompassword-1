@@ -9,9 +9,11 @@ function disp(){
 };
 
 function finalStr() {
-  var Str = $('#sortable3').children().toArray();
-  var disp = Str.concat();
-  console.log(disp);
+  $('#sortable3').children().contents().each(function() {
+    console.log($(this).text);
+    }
+});
+
 }
 
 export {disp, finalStr};
