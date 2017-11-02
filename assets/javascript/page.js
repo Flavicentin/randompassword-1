@@ -1,12 +1,10 @@
-<<<<<<< HEAD
+
 import {disp, finalStr} from './final_disp.js';
-=======
 // import {disp} from './final_disp.js';
 import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
 
 //var numWordOptions = 8;
 //var wordLists = getWordLists(8, 16, numWordOptions);
->>>>>>> f5f09c14dd7f5db2bad840096ba1ac70b9f14ed0
 
 $( document ).ready(function() {
   // $( ".sortable" ).sortable();
@@ -45,17 +43,15 @@ $( document ).ready(function() {
 
   $('.carousel').carousel('pause');
 
-<<<<<<< HEAD
   $('#confirm-2').on('click', function() {
-    disp();
+    disp(wordLists.length);
   });
 
   $('#confirm-3').on('click', function() {
     finalStr();
   });
-=======
+
   // $('#confirm-2').on('click', disp());
->>>>>>> f5f09c14dd7f5db2bad840096ba1ac70b9f14ed0
 
     // console.log(dispStr);
     // console.log($('select[name=left-column]').val());
