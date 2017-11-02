@@ -1,4 +1,3 @@
-
 import {disp, finalStr} from './final_disp.js';
 import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
 

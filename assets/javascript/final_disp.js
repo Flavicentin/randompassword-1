@@ -13,9 +13,11 @@ function disp(numDrums){
 };
 
 function finalStr() {
-  var Str = $('#sortable3').children().toArray();
-  var disp = Str.concat();
-  console.log(disp);
-}
+  $('#sortable3').children().contents().each(function() {
+    var disp = Str.concat();
+ 	console.log($(this).text);
+    console.log(disp);
+  });
+};
 
 export {disp, finalStr};
