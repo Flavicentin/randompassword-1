@@ -20,6 +20,7 @@ function getWords(numLetters, wordArray) {
                 }
             }
         }
+        console.log("Status: " + req.status);
     }
 };
 
