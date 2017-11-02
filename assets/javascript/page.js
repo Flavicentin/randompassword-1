@@ -1,3 +1,5 @@
+import {disp} from './final_disp.js';
+
 $( document ).ready(function() {
   // $( ".sortable" ).sortable();
   // $( ".sortable" ).disableSelection();
@@ -14,11 +16,12 @@ $( document ).ready(function() {
 
   $('.carousel').carousel('pause');
 
-  $('#confirm-2').on('click', function() {
-    console.log($('select[name=left-column]').val());
-    console.log($('select[name=mid-column]').val());
-    console.log($('select[name=right-column]').val());
-  });
+  $('#confirm-2').on('click', disp());
+
+    // console.log(dispStr);
+    // console.log($('select[name=left-column]').val());
+    // console.log($('select[name=mid-column]').val());
+    // console.log($('select[name=right-column]').val());
 });
 
 
