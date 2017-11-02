@@ -3,7 +3,7 @@ const passLength = {
   max: null,
 };
 
-function slider(){
+function sliderStart(){
    $( "#slider-range" ).slider({
      range: true,
      min: 8,
@@ -13,11 +13,10 @@ function slider(){
        $( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
        passLength.min = ui.values[ 0 ];
        passLength.max = ui.values[ 1 ];
-       console.log(passLength.min);
      }
    });
    $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + " - " + $( "#slider-range" ).slider( "values", 1 ) );
 
 };
 
-slider();
+export {passLength, sliderStart};

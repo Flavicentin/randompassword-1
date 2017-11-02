@@ -1,6 +1,10 @@
 import {disp} from './final_disp.js';
+import {passLength, sliderStart} from './length-slider.js';
 
 $( document ).ready(function() {
+  //activate lenght selection slider
+  sliderStart();
+
   // $( ".sortable" ).sortable();
   // $( ".sortable" ).disableSelection();
   // $('li').filter(":nth-child(1)").addClass("primary-option"); // Selects only the first element of the word lists
