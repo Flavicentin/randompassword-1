@@ -29,7 +29,7 @@ div.drum-wrapper .inner {
 }
 
 .outside div.drum-wrapper {
-	height: 9;
+	/*height: 9rem;*/
 }
 .outside div.drum-wrapper .inner {
 	top: 12px;
