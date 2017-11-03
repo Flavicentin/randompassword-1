@@ -8,7 +8,7 @@ $( document ).ready(function() {
   //activate lenght selection slider
   sliderStart();
   
-  $( "#sortable1, #sortable2" ).sortable({
+  $( "#sortable1" ).sortable({
     connectWith: ".connectedSortable",
     receive: function( event, ui ) {
       if (ui.item != null) {
@@ -21,7 +21,7 @@ $( document ).ready(function() {
         ui.placeholder.remove();
       }
     },
-    //accept: "",
+    accept: "",
     helper: function() {
       var instance = $(this).sortable("instance");
       var ret = $('<li>');
@@ -33,13 +33,12 @@ $( document ).ready(function() {
   }).disableSelection();
   $( "#sortable3" ).sortable({
     connectWith: ".connectedSortable",
-    accept: "#sortable1, #sortable2",
+    accept: "#sortable1",
     cancel: ".draggable-letter"
   }).disableSelection();
 
   var numWordOptions = 16;
   setDrumWords(passLength.min, passLength.max, numWordOptions);
-
 
   $('.ui-slider-handle').on('mousedown', function() {
     $('body').on('mouseup', function() {
@@ -60,11 +59,11 @@ $( document ).ready(function() {
     dummy.setAttribute('value', Str);
     dummy.select();
     document.execCommand("copy");
-    document.body.removeChild(dummy)
+    document.body.removeChild(dummy);
   });
 
 // Character counter
-  $('body').on('mouseup', function(){
+  $('body').on('mouseup', function() {
     var numChar = $('#sortable3').children().length;
     $('.plength').text("Your password is " + numChar + " characters");
   });
@@ -104,11 +103,9 @@ function setDrumWords(min, max, num) {
     }
     $("#selector-row").append(outerCol);
     select.drum({panelCount: num});
-  };
-
+  }
+};
 
 // Code for slider
   // $('#center-box').html(makeFancySlider());
   // fancySlider();
-
-};

@@ -6570,9 +6570,11 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
 
 	_rearrange: function( event, i, a, hardRefresh ) {
 
-		a ? a[ 0 ].appendChild( this.placeholder[ 0 ] ) :
+		if (!this.options.duplicate) {
+			a ? a[ 0 ].appendChild( this.placeholder[ 0 ] ) :
 			i.item[ 0 ].parentNode.insertBefore( this.placeholder[ 0 ],
 				( this.direction === "down" ? i.item[ 0 ] : i.item[ 0 ].nextSibling ) );
+		}
 
 		//Various things done here to improve the performance:
 		// 1. we create a setTimeout, that calls refreshPositions
@@ -6629,7 +6631,7 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
 			this.currentItem.show();
 		}
 
-		if ( this.fromOutside && !noPropagation ) {
+		if ( (this.fromOutside || this.options.duplicate) && !noPropagation ) {
 			delayedTriggers.push( function( event ) {
 				this._trigger( "receive", event, this._uiHash( this.fromOutside ) );
 			} );
