@@ -7,11 +7,7 @@ var wordLists = [];
 $( document ).ready(function() {
   //activate lenght selection slider
   sliderStart();
-
-  // $( ".sortable" ).sortable();
-  // $( ".sortable" ).disableSelection();
-  // $('li').filter(":nth-child(1)").addClass("primary-option"); // Selects only the first element of the word lists
-  // clickDrag();
+  
   $( "#sortable1, #sortable2, #sortable3" ).sortable({
       connectWith: ".connectedSortable"
     }).disableSelection();
@@ -62,24 +58,3 @@ function setDrumWords(min, max, num) {
     select.drum({panelCount: num});
   }
 };
-
-// function clickDrag() {
-//   var isDragging = false;
-//   $("li")
-//   .mousedown(function() {
-//       isDragging = false;
-//   })
-//   .mousemove(function() {
-//       isDragging = true;
-//    })
-//   .mouseup(function() {
-//     var wasDragging = isDragging;
-//     isDragging = false;
-//     if (wasDragging) {
-//       setTimeout(function() { // Timeout adds a one(1) milisecond delay to this function executing
-//         $('li').filter(":nth-child(1)").addClass("primary-option"); // Selects only the first element of the list
-//         $('li').not(":nth-child(1)").removeClass("primary-option"); // Selects everything but the first element of the list
-//       }, 1);
-//     };
-//   });
-// }
