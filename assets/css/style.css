@@ -2,6 +2,7 @@
   list-style: none;
   padding: 0px;
   margin: auto;
+  width: auto;
 }
 
 .display li {
@@ -25,6 +26,7 @@
 
 .carousel-item {
   height: 350px;
+  display: inline-block;
 }
 
 .carousel-control-prev, .carousel-control-next {
@@ -91,3 +93,5 @@
 .plength {
   text-align: center;
 }
+
+.carol

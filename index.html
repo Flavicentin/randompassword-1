@@ -27,11 +27,10 @@
 <!-- Open Generator Panel -->
 			<div id="popdisp" class="row">
 				<div class="col-md-12">
-<!-- Carousel -->
-					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-					  <div class="carousel-inner">
-					    <div class="carousel-item active" id="length-selector">
-							<div class="center-box">
+<!-- Slider Row -->
+					<div class="row">
+						<div class="col-md-12">
+							<div class="center-box" id="length-selector">
 								<p>
 								  <label for="amount">Word Length:</label>
 								  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
@@ -40,87 +39,59 @@
 								"margin: 60px"></div>
 							</div>
 						</div>
-						<div class="carousel-item" id="word-selector">
-<!-- Selector Panel Row -->
-							<div class="row">
-								<div class="col-md-12">
+					</div> <!-- Close Slider Row -->
 <!-- Open Selector Row -->
-									<div class="row" id="selector-row">
+					<div class="row" id="selector-row">
 
-										<!--Selector drums are insterted here via jQuery-->
+						<!--Selector drums are insterted here via jQuery-->
 
-									</div> <!-- Close Selector Row -->
-								</div>
-							</div> <!-- Close Selector Panel Row -->
-					    </div>
-					    <div class="carousel-item" id="symbol-inserter">
-<!-- Open Carousel Row -->
-								<div class="row">
-									<div class="col-md-12">
+					</div> <!-- Close Selector Row -->
+<!-- Open Drag/drop Row -->
+					<div class="row">
+						<div class="col-md-12">
 <!-- Open symbols row -->
-										<div class="row">
-											<ul id="sortable1" class="connectedSortable">
-<!-- List of common symbols and other things -->
-												<li class="ui-state-default">!</li>
-												<li class="ui-state-default">@</li>
-												<li class="ui-state-default">#</li>
-												<li class="ui-state-default">$</li>
-												<li class="ui-state-default">%</li>
-												<li class="ui-state-default">^</li>
-												<li class="ui-state-default">&</li>
-												<li class="ui-state-default">*</li>
-												<li class="ui-state-default">(</li>
-												<li class="ui-state-default">)</li>
-												<li class="ui-state-default">?</li>
-												<li class="ui-state-default">/</li>
-												<li class="ui-state-default"><</li>
-												<li class="ui-state-default">></li>
-											</ul>
-										</div> <!-- Close symbols row -->
-<!-- Open Numerals Row -->
-										<div class="row">
-											<ul id="sortable2" class="connectedSortable">
-												<li class="ui-state-default">0</li>
-												<li class="ui-state-default">1</li>
-												<li class="ui-state-default">2</li>
-												<li class="ui-state-default">3</li>
-												<li class="ui-state-default">4</li>
-												<li class="ui-state-default">5</li>
-												<li class="ui-state-default">6</li>
-												<li class="ui-state-default">7</li>
-												<li class="ui-state-default">8</li>
-												<li class="ui-state-default">9</li>
-											</ul>
-										</div> <!-- Close Numerals Row -->
+							<div class="row">
+								<ul id="sortable1" class="connectedSortable">
+<!-- List of common symbols and numerals -->
+									<li class="ui-state-default">!</li>
+									<li class="ui-state-default">@</li>
+									<li class="ui-state-default">#</li>
+									<li class="ui-state-default">$</li>
+									<li class="ui-state-default">%</li>
+									<li class="ui-state-default">^</li>
+									<li class="ui-state-default">&</li>
+									<li class="ui-state-default">*</li>
+									<li class="ui-state-default">(</li>
+									<li class="ui-state-default">)</li>
+									<li class="ui-state-default">?</li>
+									<li class="ui-state-default">/</li>
+									<li class="ui-state-default"><</li>
+									<li class="ui-state-default">></li>
+									<li class="ui-state-default">0</li>
+									<li class="ui-state-default">1</li>
+									<li class="ui-state-default">2</li>
+									<li class="ui-state-default">3</li>
+									<li class="ui-state-default">4</li>
+									<li class="ui-state-default">5</li>
+									<li class="ui-state-default">6</li>
+									<li class="ui-state-default">7</li>
+									<li class="ui-state-default">8</li>
+									<li class="ui-state-default">9</li>
+								</ul>
+							</div> <!-- Close symbols/numerals row -->
 <!-- Open User Password Row -->
-										<div class="row">
-											<ul id="sortable3" class="connectedSortable primarySortable">
+							<div class="row">
+								<ul id="sortable3" class="connectedSortable primarySortable">
 <!-- Will need to generate these list items based on the password selected earlier -->
 
-											</ul>
-										</div> <!-- Close User Password Row -->
-										<button id="copy-clip" type="button" class="btn btn-success">Copy to clipboard</button>
-										<div class="plength">
+								</ul>
+							</div> <!-- Close User Password Row -->
+							<button id="copy-clip" type="button" class="btn btn-success">Copy to clipboard</button>
+							<div class="plength">
 
-										</div>
-									</div>
-								</div> <!-- Close Carousel Row -->
-					    </div>
-					  </div>
-<!-- Carousel Control Buttons -->
-					  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-					    <span class="carousel-control-prev-icon carou-control" aria-hidden="true"></span>
-					    <span class="sr-only">Previous</span>
-					  </a>
-					  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-					    <span class="carousel-control-next-icon carou-control" aria-hidden="true"></span>
-					    <span class="sr-only">Next</span>
-					  </a>
-					</div>
-<!-- Open Display Row -->
-					<div class="row">
-
-					</div> <!-- Close Display Row -->
+							</div>
+						</div>
+					</div> <!-- CloseDrag/drop Row -->
 				</div>
 			</div> <!-- Close Generator Panel -->
 		</div> <!-- Close Global Box -->
