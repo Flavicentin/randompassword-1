@@ -10,9 +10,16 @@
 		<!-- jquery ui css -->
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
-		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+		<style>
+		.red-slider {
+			height: 100%;
+			background-color: red;
+		}
+
+		</style>
+
 		<link rel="stylesheet" href="./assets/css/style.css">
-		<link rel="stylesheet" href="./assets/css/animation.css">
+		<link rel="stylesheet" href="./assets/css/minimal.css">
 		<script type="text/javascript" src="./assets/javascript/velocity.js"></script>
 		<script type="module" src="./assets/javascript/length-slider.js"></script>
 		<script type="text/javascript" src="./assets/javascript/jQuery-UI-Touch.js"></script>
@@ -21,15 +28,27 @@
 	</head>
 	<body>
 <!-- Open Global Box -->
+
 		<div id="main" class="container">
-			<div class="center-box">
+			<!-- comment in below for default ui slider -->
+			<!-- <div class="center-box">
 				<p>
-				  <label for="amount">Word Length:</label>
+				  <label for="amount">Password Length:</label>
 				  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
 				</p>
 				<div id="slider-range"></div>
-			</div>
+			</div> -->
 
+			<div id="center-box" class="center-box">
+					<div id="resizable" class="red-slider">
+						<div id="min-handle-box" class="ui-resizable-handle ui-resizable-w">
+							<div class="min-handle">
+							</div>
+						</div>
+						<div id="max-handle-box" class="ui-resizable-handle ui-resizable-e">
+							<div class="max-handle">
+							</div>
+					</div>
 
 		</div>
 </html>

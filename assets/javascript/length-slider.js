@@ -19,4 +19,26 @@ function sliderStart(){
 
 };
 
+$( function() {
+    let parentHeight = $("#center-box").height();
+    let parentWidth = $("#center-box").width();
+    let minHandle = $("#min-handle-box");
+    let maxHandle = $("#max-handle-box");
+    $( "#resizable" ).resizable({
+      handles: {minHandle, maxHandle},
+      containment: "#center-box",
+      maxHeight: parentHeight,
+      maxWidth: parentWidth,
+      minHeight: parentHeight,
+      grid: (parentWidth / 22),
+
+    });
+  } );
+
+
+
+
+sliderStart();
+
+
 export {passLength, sliderStart};
