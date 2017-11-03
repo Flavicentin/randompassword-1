@@ -1,4 +1,4 @@
-import {disp, finalStr} from './final_disp.js';
+import {disp, finalStr, Str} from './final_disp.js';
 import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
 import {passLength, sliderStart} from './length-slider.js';
 
@@ -7,7 +7,7 @@ var wordLists = [];
 $( document ).ready(function() {
   //activate lenght selection slider
   sliderStart();
-  
+
   $( "#sortable1, #sortable2, #sortable3" ).sortable({
       connectWith: ".connectedSortable"
     }).disableSelection();
@@ -51,5 +51,20 @@ function setDrumWords(min, max, num) {
     }
     $("#selector-row").append(outerCol);
     select.drum({panelCount: num});
-  }
+  };
+
+  $('#copy-clip').on('click', function() {
+    console.log('test');
+    var dummy = document.createElement("input");
+    //dummy.style.display = 'none'
+    document.body.appendChild(dummy);
+    //$(dummy).css('display','none');
+    dummy.setAttribute("id", "dummy_id");
+    //dummy.setAttribute('value', document.URL + '; ' + document.title)
+    dummy.setAttribute('value', Str);
+    //document.getElementById("dummy_id").value=val;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy)
+  });
 };

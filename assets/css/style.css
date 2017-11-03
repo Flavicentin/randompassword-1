@@ -19,16 +19,18 @@
   font-size: 30px;
 }
 
-.carou-control {
+/*.carou-control {
   background-color: black;
-}
+}*/
 
 .carousel-item {
-  min-height: 300;
+  height: 350px;
 }
 
 .carousel-control-prev, .carousel-control-next {
   width: 5%;
+  background-color: black;
+  opacity: .25;
 }
 
 .connectedSortable li {
@@ -80,4 +82,8 @@
   padding: 10px;
   font-size: 24px;
   margin: auto;
+}
+
+#copy-clip {
+  width: 200px;
 }
