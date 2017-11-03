@@ -6,9 +6,11 @@ function disp(numDrums){
   }
   var dispArr = dispStr.split("");
   console.log(dispArr);
-  $('#sortable3').html('<li class="ui-state-highlight">' + dispArr[0] + '</li>');
-  for (var i = 1; i < dispArr.length; i++) {
-    $('#sortable3').append('<li class="ui-state-highlight">' + dispArr[i] + '</li>');
+  //$('#sortable3').html('<li class="ui-state-highlight draggable-letter">' + dispArr[0] + '</li>');
+  for (var i = 0; i < dispArr.length; i++) {
+  	var draggableLetter = $('<li>');
+  	draggableLetter.addClass("ui-state-highlight draggable-letter");
+    $('#sortable3').append('<li class="ui-state-highlight draggable-letter">' + dispArr[i] + '</li>');
   };
 };
 

@@ -8,9 +8,34 @@ $( document ).ready(function() {
   //activate lenght selection slider
   sliderStart();
   
-  $( "#sortable1, #sortable2, #sortable3" ).sortable({
-      connectWith: ".connectedSortable"
-    }).disableSelection();
+  $( "#sortable1, #sortable2" ).sortable({
+    connectWith: ".connectedSortable",
+    receive: function( event, ui ) {
+      if (ui.item != null) {
+        ui.item.remove();
+      }
+      if (ui.helper != null) {
+        ui.helper.remove();
+      }
+      if (ui.placeholder != null) {
+        ui.placeholder.remove();
+      }
+    },
+    accept: "",
+    helper: function() {
+      var instance = $(this).sortable("instance");
+      var ret = $('<li>');
+      ret.addClass("ui-state-default");
+      ret.text(instance.currentItem.text());
+      return ret;
+    },
+    duplicate: true
+  }).disableSelection();
+  $( "#sortable3" ).sortable({
+    connectWith: ".connectedSortable",
+    accept: "#sortable1, #sortable2",
+    cancel: ".draggable-letter"
+  }).disableSelection();
 
   var numWordOptions = 16;
   setDrumWords(passLength.min, passLength.max, numWordOptions);
@@ -27,6 +52,15 @@ $( document ).ready(function() {
 
   $('.btn').on('click', function() {
     finalStr();
+  });
+
+  $(document).on('dblclick', '.draggable-letter', function() {
+    var letter = $(this).text();
+    if (letter === letter.toUpperCase()) {
+      $(this).text(letter.toLowerCase());
+    } else {
+      $(this).text(letter.toUpperCase());
+    }
   });
 
 });
