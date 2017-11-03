@@ -11,13 +11,19 @@ label {
 /*word length value*/
 #amount {
   font-size: 25px;
-
 }
 
 #word-length-text {
-  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-15%);
+  margin-top: 15%;
+  margin-bottom: -50px;
 }
 
+.btn-success {
+  background-color: red;
+}
 
 
 .connectedSortable {
@@ -25,6 +31,7 @@ label {
   padding: 0px;
   margin: auto;
   width: auto;
+
 }
 
 .display li {
@@ -45,8 +52,9 @@ label {
 
 .connectedSortable li {
   display: inline;
-  font-size: 2rem;
+  font-size: 25px;
   padding: 2px;
+  padding-left: 5px;
 }
 
 .primarySortable li {
