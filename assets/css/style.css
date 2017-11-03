@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+
+body {
+  font-family: 'Anonymous Pro', monospace;
+}
+
+/*word length:*/
+label {
+  font-size: 25px;
+}
+/*word length value*/
+#amount {
+  font-size: 25px;
+
+}
+
+#word-length-text {
+  text-align: center;
+}
+
+
+
 .connectedSortable {
   list-style: none;
   padding: 0px;
