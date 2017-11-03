@@ -2,6 +2,8 @@ import {disp, finalStr} from './final_disp.js';
 import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
 import {passLength, sliderStart} from './length-slider.js';
 
+var wordLists = [];
+
 $( document ).ready(function() {
   //activate lenght selection slider
   sliderStart();
@@ -14,31 +16,8 @@ $( document ).ready(function() {
       connectWith: ".connectedSortable"
     }).disableSelection();
 
-// For these, panelCount = num of word options + 1
-  var numWordOptions = 8;
-  var wordLists = getWordLists(8, 16, numWordOptions);
-
-  for (var i = 0; i < wordLists.length; i++) {
-    var outerCol = $("<div>");
-    outerCol.addClass("col-md-" + Math.floor(12 / wordLists.length) + " outside");
-    var select = $("<select>");
-    select.attr("name", ("drum-select-" + i));
-    outerCol.append(select);
-    for (var j = 0; j < numWordOptions; j++) {
-      var word = wordLists[i][j].charAt(0).toUpperCase() + wordLists[i][j].substring(1);
-      var option = $("<option>");
-      option.attr("value", word);
-      option.text(word);
-      select.append(option);
-      //select.append($("<option>").attr("value", word).text(word));
-    }
-    $("#selector-row").append(outerCol);
-    select.drum({panelCount: numWordOptions});
-  }
-
-  //$("#left-col").drum({ panelCount: numWordOptions });
-  //$("#mid-col").drum({ panelCount: numWordOptions });
-  //$("#right-col").drum({ panelCount: numWordOptions });
+  var numWordOptions = 16;
+  setDrumWords(passLength.min, passLength.max, numWordOptions);
 
   $('.carousel').carousel('pause');
 
@@ -50,14 +29,38 @@ $( document ).ready(function() {
     finalStr();
   });
 
-    // console.log(dispStr);
-    // console.log($('select[name=left-column]').val());
-    // console.log($('select[name=mid-column]').val());
-    // console.log($('select[name=right-column]').val());
+  $('.carousel-control-next').on('click', function() {
+    // TODO
+  });
+
+  $('#confirm-1').on('click', function() {
+    setDrumWords(passLength.min, passLength.max, numWordOptions);
+  });
 
 });
 
+function setDrumWords(min, max, num) {
+  wordLists = getWordLists(min, max, num);
 
+  $("#selector-row").empty();
+
+  for (var i = 0; i < wordLists.length; i++) {
+    var outerCol = $("<div>");
+    outerCol.addClass("col-md-" + Math.floor(12 / wordLists.length) + " outside");
+    var select = $("<select>");
+    select.attr("name", ("drum-select-" + i));
+    outerCol.append(select);
+    for (var j = 0; j < num; j++) {
+      var word = wordLists[i][j].charAt(0).toUpperCase() + wordLists[i][j].substring(1);
+      var option = $("<option>");
+      option.attr("value", word);
+      option.text(word);
+      select.append(option);
+    }
+    $("#selector-row").append(outerCol);
+    select.drum({panelCount: num});
+  }
+};
 
 // function clickDrag() {
 //   var isDragging = false;

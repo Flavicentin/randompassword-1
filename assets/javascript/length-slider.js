@@ -1,6 +1,6 @@
 const passLength = {
-  min: null,
-  max: null,
+  min: 12,
+  max: 18,
 };
 
 function sliderStart(){
@@ -8,7 +8,7 @@ function sliderStart(){
      range: true,
      min: 8,
      max: 30,
-     values: [ 12, 18 ],
+     values: [ passLength.min, passLength.max ],
      slide: function( event, ui ) {
        $( "#amount" ).val( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
        passLength.min = ui.values[ 0 ];
@@ -16,7 +16,6 @@ function sliderStart(){
      }
    });
    $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + " - " + $( "#slider-range" ).slider( "values", 1 ) );
-
 };
 
 $( function() {
