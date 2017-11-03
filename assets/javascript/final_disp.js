@@ -6,10 +6,11 @@ function disp(numDrums){
   }
   var dispArr = dispStr.split("");
 
-  $('#sortable3').html('<li class="ui-state-highlight">' + dispArr[0] + '</li>');
-  for (var i = 1; i < dispArr.length; i++) {
-    $('#sortable3').append('<li class="ui-state-highlight">' + dispArr[i] + '</li>');
-  };
+  console.log(dispArr);
+  //$('#sortable3').html('<li class="ui-state-highlight draggable-letter">' + dispArr[0] + '</li>');
+  for (var i = 0; i < dispArr.length; i++) {
+    $('#sortable3').append('<li class="ui-state-highlight draggable-letter">' + dispArr[i] + '</li>');
+  }
   var numChar = $('#sortable3').children().length;
   $('.plength').text("Your password is " + numChar + " characters");
 };
