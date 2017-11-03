@@ -1,6 +1,6 @@
 import {disp, finalStr, Str} from './final_disp.js';
 import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
-import {passLength, sliderStart} from './length-slider.js';
+import {passLength, sliderStart, fancySlider, makeFancySlider} from './length-slider.js';
 
 var wordLists = [];
 
@@ -67,4 +67,9 @@ function setDrumWords(min, max, num) {
   $('body').on('mouseup', function() {
     finalStr();
   });
+
+// Code for slider
+  $('#center-box').html(makeFancySlider());
+  fancySlider();
+
 };
