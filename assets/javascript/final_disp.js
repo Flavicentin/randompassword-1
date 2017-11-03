@@ -5,7 +5,7 @@ function disp(numDrums){
   	dispStr += $("select[name=drum-select-" + i).val();
   }
   var dispArr = dispStr.split("");
-  console.log(dispArr);
+
   $('#sortable3').html('<li class="ui-state-highlight">' + dispArr[0] + '</li>');
   for (var i = 1; i < dispArr.length; i++) {
     $('#sortable3').append('<li class="ui-state-highlight">' + dispArr[i] + '</li>');
@@ -20,7 +20,7 @@ function finalStr() {
     finArr.push($(this).text());
   });
   Str = finArr.join("");
-  console.log(Str);
+  $('.plength').text(Str);
   return Str;
 };
 
