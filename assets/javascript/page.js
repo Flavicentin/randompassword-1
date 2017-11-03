@@ -54,6 +54,7 @@ function setDrumWords(min, max, num) {
   };
 // Copy finished password to clipboard
   $('#copy-clip').on('click', function() {
+    finalStr();
     var dummy = document.createElement("input");
     document.body.appendChild(dummy);
     dummy.setAttribute("id", "dummy_id");
@@ -64,12 +65,13 @@ function setDrumWords(min, max, num) {
   });
 
 // Character counter
-  $('body').on('mouseup', function() {
-    finalStr();
+  $('body').mouseup(function(){
+    var numChar = $('#sortable3').children().length;
+    $('.plength').text("Your password is " + numChar + " characters");
   });
 
 // Code for slider
-  $('#center-box').html(makeFancySlider());
-  fancySlider();
+  // $('#center-box').html(makeFancySlider());
+  // fancySlider();
 
 };

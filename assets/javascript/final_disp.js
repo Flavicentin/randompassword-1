@@ -10,6 +10,8 @@ function disp(numDrums){
   for (var i = 1; i < dispArr.length; i++) {
     $('#sortable3').append('<li class="ui-state-highlight">' + dispArr[i] + '</li>');
   };
+  var numChar = $('#sortable3').children().length;
+  $('.plength').text("Your password is " + numChar + " characters");
 };
 
 var Str;
@@ -20,7 +22,6 @@ function finalStr() {
     finArr.push($(this).text());
   });
   Str = finArr.join("");
-  $('.plength').text(Str);
   return Str;
 };
 
