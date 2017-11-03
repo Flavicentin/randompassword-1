@@ -19,16 +19,18 @@
   font-size: 30px;
 }
 
-.carou-control {
+/*.carou-control {
   background-color: black;
-}
+}*/
 
 .carousel-item {
-  min-height: 300px;
+  height: 350px;
 }
 
 .carousel-control-prev, .carousel-control-next {
   width: 5%;
+  background-color: black;
+  opacity: .25;
 }
 
 .connectedSortable li {
@@ -48,7 +50,40 @@
   border-color: #4aaaa5;
 }
 
-/*.confirm {
-  position: relative;
-  top: 30px;
-}*/
+.btn {
+  width: 100px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.pop-up {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -150px;
+  width: 300px;
+  background-color: white;
+  border: black 5px solid;
+  opacity: 0;
+}
+
+.pop-text {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.pwordDisp {
+  border: 2px black solid;
+  background-color: #f9d78e;
+  width: 95%;
+  padding: 10px;
+  font-size: 24px;
+  margin: auto;
+}
+
+#copy-clip {
+  width: 200px;
+}

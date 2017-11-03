@@ -12,20 +12,16 @@ function disp(numDrums){
   };
 };
 
+var Str;
+
 function finalStr() {
   var finArr = []
   $('#sortable3').children().each(function() {
     finArr.push($(this).text());
   });
-  var Str = finArr.join("");
+  Str = finArr.join("");
   console.log(Str);
-  $('#popdisp').prepend('<div class="pop-up"></div>')
-  var pop = $('.pop-up');
-  pop.css({"position":"absolute", "top": "30%", "left":"45%", "height":"30%", "width":"40%", "background-color": "white", "border": "black 5px solid"});
-  pop.append('<div class="pop-text"></div>');
-  var ptxt = $('.pop-text');
-  ptxt.text("Your secure password is:");
-  ptxt.css();
+  return Str;
 };
 
-export {disp, finalStr};
+export {disp, finalStr, Str};

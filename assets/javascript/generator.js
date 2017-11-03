@@ -118,7 +118,9 @@ function getWordLists(minLength, maxLength, listLength) {
 		}
 		max += poolMax;
 		min += poolMin;
-		wordLists[i] = (getXWordsFromList(listLength, wordPool));
+		if (wordPool.length > listLength) {
+			wordLists[i] = (getXWordsFromList(listLength, wordPool));
+		}
 	}
 	return shuffle(wordLists);
 };
