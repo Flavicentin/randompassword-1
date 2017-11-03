@@ -40,7 +40,7 @@ const startOpening = () => {
   }, 6000);
 };
 
-startOpening();
+// startOpening();
 
 export {startOpening};
 

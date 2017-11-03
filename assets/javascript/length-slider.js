@@ -82,29 +82,8 @@ const fancySlider = () => {
 
   };
 
-import {startOpening} from "./opening.js"
-
-$('document').ready(function() {
 
 
-  //make center box in main
-  let centerBox = $(`<div id="center-box" class="center-box">`);
-
-  //start opening animation
-  startOpening()
-
-  //make fancy slider (transparent on start)
-  centerBox.html(makeFancySlider());
-  $("#main").append(centerBox);
-
-  //start slider functionality, animate slider fade in
-  fancySlider();
-  $(".red-slider").delay(4000).velocity({opacity: 1}, 2000);
-
-
-
-//end of document ready
-});
 
 
 
