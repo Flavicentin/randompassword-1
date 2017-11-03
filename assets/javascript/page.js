@@ -40,14 +40,33 @@ $( document ).ready(function() {
   var numWordOptions = 16;
   setDrumWords(passLength.min, passLength.max, numWordOptions);
 
-  $('.carousel').carousel('pause');
 
-  $('body').on('click touch', function() {
-    disp(wordLists.length);
-
-    if($('.active').attr('id') === 'length-selector') {
+  $('.ui-slider-handle').on('mousedown', function() {
+    $('body').on('mouseup', function() {
+      disp(wordLists.length);
       setDrumWords(passLength.min, passLength.max, numWordOptions);
-    }
+      $(this).off();
+    });
+    // if($('.active').attr('id') === 'length-selector') {
+    //   setDrumWords(passLength.min, passLength.max, numWordOptions);
+    // }
+  });
+// Copy finished password to clipboard
+  $('#copy-clip').on('click', function() {
+    finalStr();
+    var dummy = document.createElement("input");
+    document.body.appendChild(dummy);
+    dummy.setAttribute("id", "dummy_id");
+    dummy.setAttribute('value', Str);
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy)
+  });
+
+// Character counter
+  $('body').on('mouseup', function(){
+    var numChar = $('#sortable3').children().length;
+    $('.plength').text("Your password is " + numChar + " characters");
   });
 
   // $('.btn').on('click', function() {
@@ -77,7 +96,7 @@ function setDrumWords(min, max, num) {
     select.attr("name", ("drum-select-" + i));
     outerCol.append(select);
     for (var j = 0; j < num; j++) {
-      var word = wordLists[i][j].charAt(0).toUpperCase() + wordLists[i][j].substring(1);
+      var word = wordLists[i][j].charAt(0) + wordLists[i][j].substring(1);
       var option = $("<option>");
       option.attr("value", word);
       option.text(word);
@@ -86,23 +105,7 @@ function setDrumWords(min, max, num) {
     $("#selector-row").append(outerCol);
     select.drum({panelCount: num});
   };
-// Copy finished password to clipboard
-  $('#copy-clip').on('click', function() {
-    finalStr();
-    var dummy = document.createElement("input");
-    document.body.appendChild(dummy);
-    dummy.setAttribute("id", "dummy_id");
-    dummy.setAttribute('value', Str);
-    dummy.select();
-    document.execCommand("copy");
-    document.body.removeChild(dummy)
-  });
 
-// Character counter
-  $('body').on('click', function(){
-    var numChar = $('#sortable3').children().length;
-    $('.plength').text("Your password is " + numChar + " characters");
-  });
 
 // Code for slider
   // $('#center-box').html(makeFancySlider());
