@@ -23,19 +23,14 @@ $( document ).ready(function() {
 
   $('.carousel-control-next').on('click', function() {
     disp(wordLists.length);
-    setDrumWords(passLength.min, passLength.max, numWordOptions);
+
+    if($('.active').attr('id') === 'length-selector') {
+      setDrumWords(passLength.min, passLength.max, numWordOptions);
+    }
   });
 
   $('.btn').on('click', function() {
     finalStr();
-  });
-
-  $('.carousel-control-next').on('click', function() {
-    // TODO
-  });
-
-  $('.carousel-control-next').on('click', function() {
-
   });
 
 });

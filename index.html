@@ -30,72 +30,30 @@
 <!-- Carousel -->
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 					  <div class="carousel-inner">
-					    <div class="carousel-item active">
-								<div class="center-box">
-									<p>
-									  <label for="amount">Word Length:</label>
-									  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-									</p>
-									<div id="slider-range" style=
-									"margin: 60px"></div>
-								</div>
+					    <div class="carousel-item active" id="length-selector">
+							<div class="center-box">
+								<p>
+								  <label for="amount">Word Length:</label>
+								  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+								</p>
+								<div id="slider-range" style=
+								"margin: 60px"></div>
 							</div>
-							<div class="carousel-item">
+						</div>
+						<div class="carousel-item" id="word-selector">
 <!-- Selector Panel Row -->
-								<div class="row">
-									<div class="col-md-12">
+							<div class="row">
+								<div class="col-md-12">
 <!-- Open Selector Row -->
-										<div class="row" id="selector-row">
-<!-- Open Left Column of Generator -->
-											<!--<div id="col-1" class="col-md-4">
-												<div class="outside">
-													<select id="left-col" name="left-column">
-														<option id="left1" value="Rent">Rent</option>
-														<option id="left2" value="Vent">Vent</option>
-														<option id="left3" value="Meant">Meant</option>
-														<option id="left4" value="Went">Went</option>
-														<option id="left5" value="Sent">Sent</option>
-														<option id="left6" value="Dent">Dent</option>
-														<option id="left7" value="Lent">Lent</option>
-														<option id="left8" value="Lent">Lent</option>
-													</select>
-												</div>
-											</div>-->
-<!-- Open Center Column of Generator -->
-											<!--<div id="col-2" class="col-md-4">
-												<div class="outside">
-													<select id="mid-col" name="mid-column">
-														<option id="mid1" value="Rent">Rent</option>
-														<option id="mid2" value="Vent">Vent</option>
-														<option id="mid3" value="Meant">Meant</option>
-														<option id="mid4" value="Went">Went</option>
-														<option id="mid5" value="Sent">Sent</option>
-														<option id="mid6" value="Dent">Dent</option>
-														<option id="mid7" value="Lent">Lent</option>
-														<option id="mid8" value="Lent">Lent</option>
-													</select>
-												</div>
-											</div>-->
-<!-- Open Right Column of Generator -->
-											<!--<div id="col-3" class="col-md-4 outside">
-												<div class="outside">
-													<select id="right-col" name="right-column">
-														<option id="right1" value="Rent">Rent</option>
-														<option id="right2" value="Vent">Vent</option>
-														<option id="right3" value="Meant">Meant</option>
-														<option id="right4" value="Went">Went</option>
-														<option id="right5" value="Sent">Sent</option>
-														<option id="right6" value="Dent">Dent</option>
-														<option id="right7" value="Lent">Lent</option>
-														<option id="right8" value="Lent">Lent</option>
-													</select>
-												</div>
-											</div>-->
-										</div> <!-- Close Selector Row -->
-									</div>
-								</div> <!-- Close Selector Panel Row -->
+									<div class="row" id="selector-row">
+
+										<!--Selector drums are insterted here via jQuery-->
+										
+									</div> <!-- Close Selector Row -->
+								</div>
+							</div> <!-- Close Selector Panel Row -->
 					    </div>
-					    <div class="carousel-item">
+					    <div class="carousel-item" id="symbol-inserter">
 <!-- Open Carousel Row -->
 								<div class="row">
 									<div class="col-md-12">
