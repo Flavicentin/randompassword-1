@@ -17,7 +17,7 @@ $( document ).ready(function() {
 
   $('.carousel').carousel('pause');
 
-  $('.carousel-control-next').on('click', function() {
+  $('.carousel-control-next').on('click touch', function() {
     disp(wordLists.length);
 
     if($('.active').attr('id') === 'length-selector') {
@@ -53,7 +53,7 @@ function setDrumWords(min, max, num) {
     select.drum({panelCount: num});
   };
 // Copy finished password to clipboard
-  $('#copy-clip').on('click', function() {
+  $('#copy-clip').on('click touch', function() {
     finalStr();
     var dummy = document.createElement("input");
     document.body.appendChild(dummy);
@@ -65,7 +65,7 @@ function setDrumWords(min, max, num) {
   });
 
 // Character counter
-  $('body').mouseup(function(){
+  $('body').on('click touch', function(){
     var numChar = $('#sortable3').children().length;
     $('.plength').text("Your password is " + numChar + " characters");
   });
