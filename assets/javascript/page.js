@@ -1,6 +1,6 @@
-import {disp, finalStr} from './final_disp.js';
+import {disp, finalStr, Str} from './final_disp.js';
 import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
-import {passLength, sliderStart} from './length-slider.js';
+import {passLength, sliderStart, fancySlider, makeFancySlider} from './length-slider.js';
 
 var wordLists = [];
 
@@ -21,7 +21,7 @@ $( document ).ready(function() {
         ui.placeholder.remove();
       }
     },
-    accept: "",
+    //accept: "",
     helper: function() {
       var instance = $(this).sortable("instance");
       var ret = $('<li>');
@@ -42,7 +42,7 @@ $( document ).ready(function() {
 
   $('.carousel').carousel('pause');
 
-  $('.carousel-control-next').on('click', function() {
+  $('body').on('click touch', function() {
     disp(wordLists.length);
 
     if($('.active').attr('id') === 'length-selector') {
@@ -50,9 +50,9 @@ $( document ).ready(function() {
     }
   });
 
-  $('.btn').on('click', function() {
-    finalStr();
-  });
+  // $('.btn').on('click', function() {
+  //   finalStr();
+  // });
 
   $(document).on('dblclick', '.draggable-letter', function() {
     var letter = $(this).text();
@@ -85,5 +85,27 @@ function setDrumWords(min, max, num) {
     }
     $("#selector-row").append(outerCol);
     select.drum({panelCount: num});
-  }
+  };
+// Copy finished password to clipboard
+  $('#copy-clip').on('click', function() {
+    finalStr();
+    var dummy = document.createElement("input");
+    document.body.appendChild(dummy);
+    dummy.setAttribute("id", "dummy_id");
+    dummy.setAttribute('value', Str);
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy)
+  });
+
+// Character counter
+  $('body').on('click', function(){
+    var numChar = $('#sortable3').children().length;
+    $('.plength').text("Your password is " + numChar + " characters");
+  });
+
+// Code for slider
+  // $('#center-box').html(makeFancySlider());
+  // fancySlider();
+
 };

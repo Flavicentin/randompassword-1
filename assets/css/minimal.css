@@ -5,6 +5,23 @@ html {
   font-family: font-family: 'Anonymous Pro', monospace;
 }
 
+.array-letter {
+  position: relative;
+  font-size: 4.5rem;
+  display: inline-block;
+  padding: 0 .2rem 0 .2rem;
+}
+
+.letter-container {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%);
+  overflow: visible;
+  height: 100%;
+  white-space: nowrap;
+}
+
 .center-box {
   position: absolute;
   top: 50%;
@@ -22,13 +39,29 @@ html {
   height: 8rem;
   width: 5.4rem;
   background-repeat: no-repeat;
-  transform: translate3d(-30%, -100%, 0);
+
 }
 
-.min-handle-box {
-  position: relative;
-  bottom: 100%;
-  left: 0;
+.min-handle-group {
+  transform: translate3d(-250%, -100%, 0);
+}
+
+.min-handle-text {
+  display: flex;
+  justify-content: center;
+  font-size: 4.5rem;
+  color: black;
+  text-align: center;
+  transform: translateX(250%);
+}
+
+.max-handle-text {
+  display: flex;
+  justify-content: center;
+  font-size: 4.5rem;
+  color: black;
+  text-align: center;
+  transform: translateX(250%);
 }
 
 .max-handle {
@@ -36,11 +69,9 @@ html {
   height: 8rem;
   width: 5.4rem;
   background-repeat: no-repeat;
-  transform: translate3d(-35%, 100%, 0);
+  transform: translate3d(0);
 }
 
-.max-handle-box {
-  position: relative;
-  bottom: 100%;
-  right: 0;
+.max-handle-group {
+  transform: translate3d(-270%, 65%, 0);
 }

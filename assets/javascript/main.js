@@ -2,21 +2,33 @@
 //below is an example of module import
 //IMPORTANT! index.html must be running on a server to use modules
 
-import {opening} from "./opening.js";
+import {startOpening} from "./opening.js";
+import {makeFancySlider, fancySlider} from "./length-slider.js";
 import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
 
 
-$(document).ready(function(){
 
-  $(".word-box").draggable({axis: 'y', containment: "parent"});
 
-  $(".drag-container").mouseup(function(){
-    $(".red").removeClass('red');
-    var elem = document.elementFromPoint((window.innerWidth / 2), window.innerHeight /2);
-    console.log(elem);
-    $(elem).addClass('red');
-  });
+$('document').ready(function() {
 
+
+  //make center box in main
+  let centerBox = $(`<div id="center-box" class="center-box">`);
+
+  //start opening animation
+  startOpening()
+
+  //make fancy slider (transparent on start)
+  centerBox.html(makeFancySlider());
+  $("#main").append(centerBox);
+
+  //start slider functionality, animate slider fade in
+  fancySlider();
+  $(".red-slider").delay(4000).velocity({opacity: 1}, 2000);
+
+
+
+//end of document ready
 });
 
 
