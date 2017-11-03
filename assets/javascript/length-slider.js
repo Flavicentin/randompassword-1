@@ -87,4 +87,4 @@ fancySlider();
 
 
 
-export {passLength, sliderStart};
+export {passLength, sliderStart, makeFancySlider, fancySlider};
