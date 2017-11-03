@@ -19,20 +19,21 @@ function sliderStart(){
 };
 
 const makeFancySlider = () => {
-  const sliderContent = (`<div id="resizable" class="red-slider">
-    <div id="min-handle-box" class="ui-resizable-handle ui-resizable-w">
-      <div class="min-handle-group">
-        <div id="min-handle-text" class="min-handle-text">8</div>
-        <div class="min-handle"></div>
+  const sliderContent = (`
+    <div id="resizable" class="red-slider" style="opacity: 0">
+      <div id="min-handle-box" class="ui-resizable-handle ui-resizable-w">
+        <div class="min-handle-group">
+          <div id="min-handle-text" class="min-handle-text">8</div>
+          <div class="min-handle"></div>
+        </div>
       </div>
-    </div>
-    <div id="max-handle-box" class="ui-resizable-handle ui-resizable-e">
-      <div class="max-handle-group">
-        <div class="max-handle"></div>
-        <div id="max-handle-text" class="max-handle-text">30</div>
+      <div id="max-handle-box" class="ui-resizable-handle ui-resizable-e">
+        <div class="max-handle-group">
+          <div class="max-handle"></div>
+          <div id="max-handle-text" class="max-handle-text">30</div>
+        </div>
       </div>
-    </div>
-  </div>`);
+    </div>`);
   return sliderContent;
 };
 
@@ -81,8 +82,29 @@ const fancySlider = () => {
 
   };
 
-$("#center-box").html(makeFancySlider());
-fancySlider();
+import {startOpening} from "./opening.js"
+
+$('document').ready(function() {
+
+
+  //make center box in main
+  let centerBox = $(`<div id="center-box" class="center-box">`);
+
+  //start opening animation
+  startOpening()
+
+  //make fancy slider (transparent on start)
+  centerBox.html(makeFancySlider());
+  $("#main").append(centerBox);
+
+  //start slider functionality, animate slider fade in
+  fancySlider();
+  $(".red-slider").delay(4000).velocity({opacity: 1}, 2000);
+
+
+
+//end of document ready
+});
 
 
 

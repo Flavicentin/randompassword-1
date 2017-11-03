@@ -5,6 +5,23 @@ html {
   font-family: font-family: 'Anonymous Pro', monospace;
 }
 
+.array-letter {
+  position: relative;
+  font-size: 4.5rem;
+  display: inline-block;
+  padding: 0 .2rem 0 .2rem;
+}
+
+.letter-container {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%);
+  overflow: visible;
+  height: 100%;
+  white-space: nowrap;
+}
+
 .center-box {
   position: absolute;
   top: 50%;
