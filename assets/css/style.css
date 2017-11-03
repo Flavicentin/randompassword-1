@@ -16,13 +16,19 @@ label {
 #word-length-text {
   position: relative;
   left: 50%;
-  transform: translateX(-15%);
-  margin-top: 15%;
-  margin-bottom: -50px;
+  transform: translateX(-12%);
 }
 
 .btn-success {
   background-color: red;
+}
+
+h1 {
+  margin-top: 35px;
+}
+
+.text-center {
+  text-align: center;
 }
 
 
@@ -31,6 +37,7 @@ label {
   padding: 0px;
   margin: auto;
   width: auto;
+  font-size: 25px;
 
 }
 
@@ -58,7 +65,8 @@ label {
 }
 
 .primarySortable li {
-  font-size: 3rem;
+  font-size: 35px;
+  padding: 10px;
   background: white;
   color: black;
 }
