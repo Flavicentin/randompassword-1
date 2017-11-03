@@ -81,8 +81,8 @@ const fancySlider = () => {
 
   };
 
-$("#center-box").html(makeFancySlider());
-fancySlider();
+// $("#center-box").html(makeFancySlider());
+// fancySlider();
 
 
 
