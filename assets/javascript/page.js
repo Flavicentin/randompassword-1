@@ -21,11 +21,12 @@ $( document ).ready(function() {
 
   $('.carousel').carousel('pause');
 
-  $('#confirm-2').on('click', function() {
+  $('.carousel-control-next').on('click', function() {
     disp(wordLists.length);
+    setDrumWords(passLength.min, passLength.max, numWordOptions);
   });
 
-  $('#confirm-3').on('click', function() {
+  $('.btn').on('click', function() {
     finalStr();
   });
 
@@ -33,8 +34,8 @@ $( document ).ready(function() {
     // TODO
   });
 
-  $('#confirm-1').on('click', function() {
-    setDrumWords(passLength.min, passLength.max, numWordOptions);
+  $('.carousel-control-next').on('click', function() {
+
   });
 
 });

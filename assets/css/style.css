@@ -24,7 +24,7 @@
 }
 
 .carousel-item {
-  min-height: 300px;
+  min-height: 300;
 }
 
 .carousel-control-prev, .carousel-control-next {
@@ -48,7 +48,23 @@
   border-color: #4aaaa5;
 }
 
-/*.confirm {
-  position: relative;
-  top: 30px;
-}*/
+.btn {
+  width: 100px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.pop-text {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.pwordDisp {
+  border: 2px black solid;
+  background-color: #f9d78e;
+  width: 95%;
+  padding: 10px;
+  font-size: 24px;
+  margin: auto;
+}

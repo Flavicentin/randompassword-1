@@ -19,13 +19,16 @@ function finalStr() {
   });
   var Str = finArr.join("");
   console.log(Str);
+// Create and fill the password display box
   $('#popdisp').prepend('<div class="pop-up"></div>')
   var pop = $('.pop-up');
-  pop.css({"position":"absolute", "top": "30%", "left":"45%", "height":"30%", "width":"40%", "background-color": "white", "border": "black 5px solid"});
+  pop.css({"position":"absolute", "top": "50%", "left":"50%", "height":"200px","margin-top": "-100px", "margin-left": "-150px", "width":"300px", "background-color": "white", "border": "black 5px solid", "opacity": "0"});
   pop.append('<div class="pop-text"></div>');
   var ptxt = $('.pop-text');
-  ptxt.text("Your secure password is:");
-  ptxt.css();
+  ptxt.append('<p class="pop-text">Your secure password is:</p>');
+  ptxt.css({"text-align": "ceneter", "width": "100%"});
+  ptxt.append('<div class="pwordDisp"></div>');
+  $('.pwordDisp').text(Str);
 };
 
 export {disp, finalStr};
