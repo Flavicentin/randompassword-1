@@ -11,17 +11,21 @@ $( document ).ready(function() {
   $( "#sortable1" ).sortable({
     connectWith: ".connectedSortable",
     receive: function( event, ui ) {
-      if (ui.item != null) {
+      if (ui.item !== null) {
         ui.item.remove();
       }
-      if (ui.helper != null) {
+      if (ui.helper !== null) {
         ui.helper.remove();
       }
-      if (ui.placeholder != null) {
+      if (ui.placeholder !== null) {
         ui.placeholder.remove();
       }
     },
-    accept: "",
+    over: function(event, ui) {
+      if (ui.placeholder !== null && ui.placeholder[0] !== null && ui.placeholder[0].parentNode !== null) {
+        ui.placeholder[0].parentNode.removeChild( ui.placeholder[ 0 ] );
+      }
+    },
     helper: function() {
       var instance = $(this).sortable("instance");
       var ret = $('<li>');
