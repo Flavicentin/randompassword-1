@@ -1,6 +1,6 @@
 import {disp, finalStr, Str} from './final_disp.js';
 import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
-import {passLength, sliderStart} from './length-slider.js';
+import {passLength, sliderStart, fancySlider, makeFancySlider} from './length-slider.js';
 
 var wordLists = [];
 
@@ -25,9 +25,9 @@ $( document ).ready(function() {
     }
   });
 
-  $('.btn').on('click', function() {
-    finalStr();
-  });
+  // $('.btn').on('click', function() {
+  //   finalStr();
+  // });
 
 });
 
@@ -52,19 +52,24 @@ function setDrumWords(min, max, num) {
     $("#selector-row").append(outerCol);
     select.drum({panelCount: num});
   };
-
+// Copy finished password to clipboard
   $('#copy-clip').on('click', function() {
-    console.log('test');
     var dummy = document.createElement("input");
-    //dummy.style.display = 'none'
     document.body.appendChild(dummy);
-    //$(dummy).css('display','none');
     dummy.setAttribute("id", "dummy_id");
-    //dummy.setAttribute('value', document.URL + '; ' + document.title)
     dummy.setAttribute('value', Str);
-    //document.getElementById("dummy_id").value=val;
     dummy.select();
     document.execCommand("copy");
     document.body.removeChild(dummy)
   });
+
+// Character counter
+  $('body').on('mouseup', function() {
+    finalStr();
+  });
+
+// Code for slider
+  $('#center-box').html(makeFancySlider());
+  fancySlider();
+
 };
