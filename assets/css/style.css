@@ -20,20 +20,6 @@
   font-size: 30px;
 }
 
-/*.carou-control {
-  background-color: black;
-}*/
-
-.carousel-item {
-  height: 350px;
-  display: inline-block;
-}
-
-.carousel-control-prev, .carousel-control-next {
-  width: 5%;
-  background-color: black;
-  opacity: .25;
-}
 
 .connectedSortable li {
   display: inline;
@@ -93,5 +79,3 @@
 .plength {
   text-align: center;
 }
-
-.carol
