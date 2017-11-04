@@ -47,7 +47,7 @@ const fancySlider = () => {
     let maxHandle = $("#max-handle-box");
     let minValue = 8;
     //defines number of posible password lengths
-    let cellQty = 24;
+    let cellQty = 23;
     let maxValue = 30;
     $( "#resizable" ).resizable({
       handles: {minHandle, maxHandle},
@@ -60,7 +60,7 @@ const fancySlider = () => {
       stop: function( event, ui ) {
         let sizeChange = ui.originalSize.width - ui.size.width;
         let posChange = ui.originalPosition.left - ui.position.left;
-        let cellSize = parentWidth / (cellQty - 1);
+        let cellSize = parentWidth / (cellQty);
 
         //min or max move logic
         if(posChange === 0 && sizeChange !== 0) {
@@ -82,10 +82,56 @@ const fancySlider = () => {
 
   };
 
+const noteAnimation = () => {
+  //choose length notification
+  $("#main").append(`<div class="length-notification">choose password length</div>`);
+  $(".length-notification").delay(3000).velocity({top: '50%'}, 3000);
+  $(".length-notification").delay(1000).velocity({top: '120%'}, 3000);
+  setTimeout(function(){
+    $(".length-notification").remove();
+  }, 10000);
+
+
+  //next button appears on mouseup
+  $(document).on('mouseup', function(){
+    $("#main").append(`<div id="slider-next" class="slider-next"></div>`);
+    $(".slider-next").velocity({opacity: '1'}, 1000);
+
+    //next button event listener
+    $("#slider-next").on('click', function(){
+      $(".slider-next").velocity({opacity: '0'}, 1000);
+      setTimeout(function() {
+        $("#slider-next").remove();
+      }, 1001);
+
+      //remove slider
+        removeFancySlider();
+    });
+
+    //remove this listener
+    $(document).off();
+  });
+
+
+
+  //length helper notification
+  $("#main").append(`<div class="length-note-helper">slide the 'min' and 'max' arrows, then press next</div>`);
+  $(".length-note-helper").delay(11000).velocity({top: '60%'},1000);
+
+  //hide helper on mousedown
+  $(document).on('mousedown', function(){
+    $(".length-note-helper").velocity({top: "50%"}, 800);
+    setTimeout(function(){$(".length-note-helper").remove()}, 800);
+  });
+}; //end of noteAnimation
+
+const removeFancySlider = () => {
+  $(".red-slider").velocity({left: '-150%'}, 1000);
+};
 
 
 
 
 
 
-export {passLength, sliderStart, makeFancySlider, fancySlider};
+export {passLength, sliderStart, makeFancySlider, fancySlider, noteAnimation};

@@ -18,6 +18,7 @@ html {
   left: 50%;
   transform: translate(-50%);
   overflow: visible;
+  white-space: nowrap;
   height: 100%;
   white-space: nowrap;
 }
@@ -74,4 +75,40 @@ html {
 
 .max-handle-group {
   transform: translate3d(-270%, 65%, 0);
+}
+
+.length-notification {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4.5rem;
+  color: white;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.length-note-helper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.75rem;
+  color: black;
+  z-index: -10;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.slider-next {
+  background-image: url('../images/next.svg');
+  height: 5.4rem;
+  width: 14.8rem;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 35rem);
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  opacity: 0;
 }
