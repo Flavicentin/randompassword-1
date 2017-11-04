@@ -5,6 +5,18 @@ html {
   font-family: 'Anonymous Pro', monospace;
 }
 
+.center-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: lightgrey;
+  height: 8rem;
+  width: 90rem;
+  z-index: -3;
+  transform: translate3d(-50%, -50%, 0);
+  font-size: 4.5rem;
+}
+
 .array-letter {
   position: relative;
   font-size: 4.5rem;
@@ -21,18 +33,6 @@ html {
   white-space: nowrap;
   height: 100%;
   white-space: nowrap;
-}
-
-.center-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background-color: lightgrey;
-  height: 8rem;
-  width: 90rem;
-  z-index: -3;
-  transform: translate3d(-50%, -50%, 0);
-  font-size: 4.5rem;
 }
 
 .min-handle {
@@ -99,6 +99,17 @@ html {
   overflow: visible;
   white-space: nowrap;
 }
+/*end slider style*/
+
+
+/*start word select style*/
+#list-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
 
 .slider-next {
   background-image: url('../images/next.svg');
@@ -111,4 +122,36 @@ html {
   transform: translate(-50%, -50%);
   z-index: 20;
   opacity: 0;
+}
+
+.drag-container {
+  height: 79rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.word-box {
+
+}
+
+.random-word {
+  font-size: 4rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+#gradient-mask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('../images/gradient-mask.svg');
+  background-repeat: no-repeat;
+  height: 80rem;
+  width: 90rem;
+  pointer-events: none;
+}
+
+.red-text {
+  color: red;
 }
