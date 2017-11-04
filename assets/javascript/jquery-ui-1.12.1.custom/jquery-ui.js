@@ -6570,7 +6570,9 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
 
 	_rearrange: function( event, i, a, hardRefresh ) {
 
-		if (!this.options.duplicate) {
+		if (!this.options.duplicate || i.instance !== this) {
+			//console.log(this.domPosition.parent);
+			//console.log(i.instance !== this);
 			a ? a[ 0 ].appendChild( this.placeholder[ 0 ] ) :
 			i.item[ 0 ].parentNode.insertBefore( this.placeholder[ 0 ],
 				( this.direction === "down" ? i.item[ 0 ] : i.item[ 0 ].nextSibling ) );
@@ -6631,7 +6633,9 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
 			this.currentItem.show();
 		}
 
-		if ( (this.fromOutside || this.options.duplicate) && !noPropagation ) {
+		if ( (this.fromOutside/* || (this.options.duplicate && this.currentContainer === this)*/) && !noPropagation ) {
+			//console.log(this.currentContainer === this);
+			//console.log(this.domPosition);
 			delayedTriggers.push( function( event ) {
 				this._trigger( "receive", event, this._uiHash( this.fromOutside ) );
 			} );
@@ -6703,7 +6707,9 @@ var widgetsSortable = $.widget( "ui.sortable", $.ui.mouse, {
 
 		//$(this.placeholder[0]).remove(); would have been the jQuery way - unfortunately,
 		// it unbinds ALL events from the original node!
-		this.placeholder[ 0 ].parentNode.removeChild( this.placeholder[ 0 ] );
+		if (this.placeholder !== null && this.placeholder[0] !== null && this.placeholder[0].parentNode != null) {
+			this.placeholder[ 0 ].parentNode.removeChild( this.placeholder[ 0 ] );
+		}
 
 		if ( !this.cancelHelperRemoval ) {
 			if ( this.helper[ 0 ] !== this.currentItem[ 0 ] ) {
