@@ -46,16 +46,12 @@ $( document ).ready(function() {
 
   $('.ui-slider-handle').on('mousedown', function() {
     $('body').on('mouseup', function() {
-      //disp(wordLists.length);
-      //setDrumWords(passLength.min, passLength.max, numWordOptions);
       $(this).off();
     });
-    // if($('.active').attr('id') === 'length-selector') {
-    //   setDrumWords(passLength.min, passLength.max, numWordOptions);
-    // }
   });
 
   $('#length-select-btn').on('click', function() {
+    //console.log(passLength.min + " - " + passLength.max);
     setDrumWords(passLength.min, passLength.max, numWordOptions);
   });
 
@@ -80,10 +76,6 @@ $( document ).ready(function() {
     var numChar = $('#sortable3').children().length;
     $('.plength').text("Your password is " + numChar + " characters");
   });
-
-  // $('.btn').on('click', function() {
-  //   finalStr();
-  // });
 
   $(document).on('dblclick', '.draggable-letter', function() {
     var letter = $(this).text();
