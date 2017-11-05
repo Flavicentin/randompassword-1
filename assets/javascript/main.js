@@ -46,14 +46,25 @@ $('document').ready(function() {
         selectedWords.test();
         //fade in next button
         $(".words-next").velocity({opacity: '1'}, 1000);
-
       });
 
-      //animate in word list
-      $('#list-container').velocity({left: '50%'}, 1000);
-      $('#gradient-mask').velocity({left: '50%'}, 1000);
+    //animate in word list
+    $('#list-container').velocity({left: '50%'}, 1000);
+    $('#gradient-mask').velocity({left: '50%'}, 1000);
 
   }, 1100)});
+
+  //add words-next event listener,
+  $('#main').on("click", '#words-next', function(){
+    setTimeout(function(){
+      //INSERT SYMBOL ADD
+    }, 1001);
+  });
+
+
+
+
+
 
 
 

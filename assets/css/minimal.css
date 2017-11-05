@@ -170,3 +170,15 @@ html {
   z-index: 20;
   opacity: 0;
 }
+
+.words-note-helper {
+  position: fixed;
+  bottom: -10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.75rem;
+  color: red;
+  z-index: 10;
+  overflow: visible;
+  white-space: nowrap;
+}

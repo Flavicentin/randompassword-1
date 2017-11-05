@@ -20,6 +20,7 @@ const selectedWords = {
         selectedWords.chosen.push(addToChosen);
       };
     });
+    console.log(this.chosen);
   },
 
   randomSets: [
@@ -31,12 +32,27 @@ const selectedWords = {
 }; //end selectedWords object
 
 
-
 const wordsNextButton = () => {
+  //make words-next button
   $("#main").append(`<div id="words-next" class="words-next"></div>`);
+
+  //add remove words-next event listener
+  $("#words-next").on('click', function(){
+    $("#words-next").velocity({opacity: '0'}, 1000);
+    setTimeout(function() {
+      $("#words-next").remove();
+    }, 1001);
+
+    //animate out word list
+    $('#list-container').velocity({left: '-150%'}, 1000);
+    $('#gradient-mask').velocity({left: '-150%'}, 1000);
+    //remove word list
+    setTimeout(function() {
+      $('#list-container').remove();
+      $('#gradient-mask').remove();
+    }, 1001);
+  });
 };
-
-
 
 
 const makeListContainer = () => {
@@ -62,9 +78,21 @@ const makeListContainer = () => {
       wordBox.append(randomWord);
     });
   };
+  wordsNoteHelper();
   wordsNextButton();
 };
 
+const wordsNoteHelper = () => {
+  //words helper notification
+  $("#main").append(`<div class="words-note-helper">drag words into the grey box, then press next</div>`);
+  $(".words-note-helper").delay(4000).velocity({bottom: '10%'},1000);
+
+  //hide helper on mousedown
+  $(document).on('mousedown', function(){
+    $(".words-note-helper").velocity({bottom: '-10%'}, 800);
+    setTimeout(function(){$(".words-note-helper").remove()}, 800);
+  });
+};
 
 
 export {selectedWords, makeListContainer};
