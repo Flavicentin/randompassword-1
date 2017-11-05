@@ -117,3 +117,12 @@ h1 {
 .plength {
   text-align: center;
 }
+
+.btn-dark {
+  background-color: #911717;
+  width: 200px;
+}
+
+.btn:hover {
+  background-color: #4c0101;
+}
