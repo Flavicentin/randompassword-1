@@ -1,25 +1,4 @@
-import {getWords} from './word-io.js';
-
-
-var words4 = [];
-var words5 = [];
-var words6 = [];
-var words7 = [];
-var words8 = [];
-var words9 = [];
-var words10 = [];
-var words11 = [];
-var words12 = [];
-
-getWords(4, words4);
-getWords(5, words5);
-getWords(6, words6);
-getWords(7, words7);
-getWords(8, words8);
-getWords(9, words9);
-getWords(10, words10);
-getWords(11, words11);
-getWords(12, words12);
+import { words4, words5, words6, words7, words8, words9, words10, words11, words12 } from './word-lists.js';
 
 function getWordsOfLength(length) {
 	if (length === 4) {
