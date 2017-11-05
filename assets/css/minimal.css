@@ -40,7 +40,6 @@ html {
   height: 8rem;
   width: 5.4rem;
   background-repeat: no-repeat;
-
 }
 
 .min-handle-group {
@@ -181,4 +180,48 @@ html {
   z-index: 10;
   overflow: visible;
   white-space: nowrap;
+}
+/*end word select*/
+
+/*start add symbol*/
+#password-container {
+  position: fixed;
+  top: 50%;
+  left: 150%;
+  transform: translate(-50%, calc(-50% - .1rem));
+  font-size: 4.5rem;
+  color: black;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.sort-box {
+  display: flex;
+  align-items: flex-end;
+  height: 5rem;
+}
+
+.symbol-insert {
+  position: relative;
+  font-size: 4.5rem;
+  display: inline-block;
+  padding: 0 .2rem 0 .2rem;
+  color: red;
+}
+
+.upper-case-letter {
+  color: #3ed1e8;
+}
+
+.copy-to-clipboard {
+  background-image: url('../images/copy-to-clipboard.svg');
+  height: 5rem;
+  width: 40.2rem;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -4;
+  opacity: 1;
 }

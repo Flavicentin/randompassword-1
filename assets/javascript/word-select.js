@@ -1,6 +1,22 @@
 const selectedWords = {
 
-  chosen: [],
+  //words chosen by word slect screen
+  chosen: ['hello','random','world'],
+
+  get chosenString() {
+    return this.chosen.join('');
+  },
+
+  get chosenArray() {
+    return this.chosenString.split('');
+  },
+
+  get defaultSymbol() {
+    let symbols = ['!','@','#','$','%','%','^','&','&','*'];
+    //return random symbol from symbols
+    return symbols[(Math.floor(Math.random() * symbols.length))];
+  },
+
   //selects words in center of window, changes text to black
   test() {
     $('.black-text').removeClass('black-text');
@@ -93,6 +109,8 @@ const wordsNoteHelper = () => {
     setTimeout(function(){$(".words-note-helper").remove()}, 800);
   });
 };
+
+
 
 
 export {selectedWords, makeListContainer};
