@@ -6,8 +6,8 @@ function disp(numDrums){
   }
   var dispArr = dispStr.split("");
 
-  console.log(dispArr);
-  //$('#sortable3').html('<li class="ui-state-highlight draggable-letter">' + dispArr[0] + '</li>');
+  //console.log(dispArr);
+  $('#sortable3').children().remove();
   for (var i = 0; i < dispArr.length; i++) {
     $('#sortable3').append('<li class="ui-state-highlight draggable-letter">' + dispArr[i] + '</li>');
   }
