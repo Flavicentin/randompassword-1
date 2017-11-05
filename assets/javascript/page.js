@@ -41,19 +41,28 @@ $( document ).ready(function() {
     cancel: ".draggable-letter"
   }).disableSelection();
 
-  var numWordOptions = 16;
+  var numWordOptions = 24;
   setDrumWords(passLength.min, passLength.max, numWordOptions);
 
   $('.ui-slider-handle').on('mousedown', function() {
     $('body').on('mouseup', function() {
-      disp(wordLists.length);
-      setDrumWords(passLength.min, passLength.max, numWordOptions);
+      //disp(wordLists.length);
+      //setDrumWords(passLength.min, passLength.max, numWordOptions);
       $(this).off();
     });
     // if($('.active').attr('id') === 'length-selector') {
     //   setDrumWords(passLength.min, passLength.max, numWordOptions);
     // }
   });
+
+  $('#length-select-btn').on('click', function() {
+    setDrumWords(passLength.min, passLength.max, numWordOptions);
+  });
+
+  $('#word-select-btn').on('click', function() {
+    disp(wordLists.length);
+  });
+
 // Copy finished password to clipboard
   $('#copy-clip').on('click', function() {
     finalStr();
@@ -99,7 +108,7 @@ function setDrumWords(min, max, num) {
     select.attr("name", ("drum-select-" + i));
     outerCol.append(select);
     for (var j = 0; j < num; j++) {
-      var word = wordLists[i][j].charAt(0) + wordLists[i][j].substring(1);
+      var word = wordLists[i][j].charAt(0).toUpperCase() + wordLists[i][j].substring(1);
       var option = $("<option>");
       option.attr("value", word);
       option.text(word);
@@ -107,6 +116,10 @@ function setDrumWords(min, max, num) {
     }
     $("#selector-row").append(outerCol);
     select.drum({panelCount: num});
+  }
+
+  if ($('#sortable3').children().length === 0) {
+    disp(wordLists.length);
   }
 };
 

@@ -126,3 +126,12 @@ h1 {
 .btn:hover {
   background-color: #4c0101;
 }
+
+#length-select-btn {
+  margin-bottom: 20px;
+}
+
+#word-select-btm {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
