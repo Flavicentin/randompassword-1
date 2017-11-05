@@ -6,7 +6,7 @@ html {
 }
 
 .center-box {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   background-color: lightgrey;
@@ -25,7 +25,7 @@ html {
 }
 
 .letter-container {
-  position: absolute;
+  position: fixed;
   top: -10%;
   left: 50%;
   transform: translate(-50%);
@@ -78,7 +78,7 @@ html {
 }
 
 .length-notification {
-  position: absolute;
+  position: fixed;
   top: -10%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -89,7 +89,7 @@ html {
 }
 
 .length-note-helper {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -104,9 +104,9 @@ html {
 
 /*start word select style*/
 #list-container {
-  position: absolute;
+  position: fixed;
   top: 50%;
-  left: 50%;
+  left: 150%;
   transform: translate(-50%, -50%);
   display: flex;
 }
@@ -116,7 +116,7 @@ html {
   height: 5.4rem;
   width: 14.8rem;
   background-repeat: no-repeat;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: calc(50% + 35rem);
   transform: translate(-50%, -50%);
@@ -136,14 +136,16 @@ html {
 
 .random-word {
   font-size: 4rem;
-  padding: 1rem;
+  padding: 0 1rem 0 1rem;
   text-align: center;
+  color: grey;
+  line-height: 6rem;
 }
 
 #gradient-mask {
-  position: absolute;
+  position: fixed;
   top: 50%;
-  left: 50%;
+  left: 150%;
   transform: translate(-50%, -50%);
   background-image: url('../images/gradient-mask.svg');
   background-repeat: no-repeat;
@@ -152,6 +154,19 @@ html {
   pointer-events: none;
 }
 
-.red-text {
-  color: red;
+.black-text {
+  color: black;
+}
+
+.words-next {
+  background-image: url('../images/next.svg');
+  height: 5.4rem;
+  width: 14.8rem;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 50%;
+  left: calc(50% + 37rem);
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  opacity: 0;
 }

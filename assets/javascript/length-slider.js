@@ -83,36 +83,20 @@ const fancySlider = () => {
   };
 
 const noteAnimation = () => {
-  //choose length notification
+  //make choose length notification
   $("#main").append(`<div class="length-notification">choose password length</div>`);
+
+  //next button appears on mouseup
+  $("#main").append(`<div id="slider-next" class="slider-next"></div>`);
+  minMaxListener('min');
+  minMaxListener('max');
+
+  //animate choose length notification
   $(".length-notification").delay(3000).velocity({top: '50%'}, 3000);
   $(".length-notification").delay(1000).velocity({top: '120%'}, 3000);
   setTimeout(function(){
     $(".length-notification").remove();
   }, 10000);
-
-
-  //next button appears on mouseup
-  $(document).on('mouseup', function(){
-    $("#main").append(`<div id="slider-next" class="slider-next"></div>`);
-    $(".slider-next").velocity({opacity: '1'}, 1000);
-
-    //next button event listener
-    $("#slider-next").on('click', function(){
-      $(".slider-next").velocity({opacity: '0'}, 1000);
-      setTimeout(function() {
-        $("#slider-next").remove();
-      }, 1001);
-
-      //remove slider
-        removeFancySlider();
-    });
-
-    //remove this listener
-    $(document).off();
-  });
-
-
 
   //length helper notification
   $("#main").append(`<div class="length-note-helper">slide the 'min' and 'max' arrows, then press next</div>`);
@@ -129,8 +113,26 @@ const removeFancySlider = () => {
   $(".red-slider").velocity({left: '-150%'}, 1000);
 };
 
+const minMaxListener = (minOrMax) => {
+  $(`.${minOrMax}-handle`).on('mouseup', function(){
+    $(".slider-next").velocity({opacity: '1'}, 1000);
 
+    //next button event listener
+    $("#slider-next").on('click', function(){
+      $(".slider-next").velocity({opacity: '0'}, 1000);
+      setTimeout(function() {
+        $("#slider-next").remove();
+      }, 1001);
 
+      //remove slider
+        removeFancySlider();
+    });
+
+    //remove this listener
+    $(`.min-handle`).off();
+    $(`.max-handle`).off();
+  });
+};
 
 
 

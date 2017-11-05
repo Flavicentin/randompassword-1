@@ -4,7 +4,7 @@
 
 import {startOpening} from "./opening.js";
 import {makeFancySlider, fancySlider, noteAnimation} from "./length-slider.js";
-import {getWordsOfLength, getXWordsFromList, getWordLists} from "./generator.js";
+import {selectedWords, makeListContainer} from "./word-select.js";
 
 
 
@@ -29,6 +29,31 @@ $('document').ready(function() {
   //animates notifications and adds next button
   noteAnimation();
     //noteAnimation's next button triggers removal of slider
+
+  //event listener for slider-next click, triggers word select
+  $('#slider-next').on("click", function(){
+    setTimeout(function(){
+
+      //makes lists of random words
+      makeListContainer();
+
+      // make word-box(s) draggable
+      $(".word-box").draggable({containment: 'parent'});
+      selectedWords.test();
+
+      //event lister, select words in word-box
+      $(".word-box").on('mouseup', function() {
+        selectedWords.test();
+        //fade in next button
+        $(".words-next").velocity({opacity: '1'}, 1000);
+
+      });
+
+      //animate in word list
+      $('#list-container').velocity({left: '50%'}, 1000);
+      $('#gradient-mask').velocity({left: '50%'}, 1000);
+
+  }, 1100)});
 
 
 
