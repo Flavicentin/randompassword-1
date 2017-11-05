@@ -5,6 +5,7 @@
 import {startOpening} from "./opening.js";
 import {makeFancySlider, fancySlider, noteAnimation} from "./length-slider.js";
 import {selectedWords, makeListContainer} from "./word-select.js";
+import {addSymbol} from "./add-symbol.js";
 
 
 
@@ -57,7 +58,9 @@ $('document').ready(function() {
   //add words-next event listener,
   $('#main').on("click", '#words-next', function(){
     setTimeout(function(){
-      //INSERT SYMBOL ADD
+      //make and animate random symbol interface
+      addSymbol();
+      $('#password-container').velocity({left: '50%'},1000);
     }, 1001);
   });
 
