@@ -40,9 +40,9 @@ const selectedWords = {
   },
 
   randomSets: [
-    ['worda1', 'word2xxxxx', 'word3', 'word4', 'word5', 'word6', 'word7'],
-    ['wordb1', 'word2xxxxx', 'word3', 'word4', 'word5', 'word6', 'word7'],
-    ['wordc1', 'word2xxxxx', 'word3', 'word4', 'word5', 'word6', 'word7']
+    ['worda1', 'word2', 'word3', 'word4', 'word5', 'word6', 'word7'],
+    ['wordb1', 'word2', 'word3', 'word4', 'word5', 'word6', 'word7'],
+    ['wordc1', 'word2', 'word3', 'word4', 'word5', 'word6', 'word7']
   ],
 
 }; //end selectedWords object
@@ -101,7 +101,7 @@ const makeListContainer = () => {
 const wordsNoteHelper = () => {
   //words helper notification
   $("#main").append(`<div class="words-note-helper">drag words into the grey box, then press next</div>`);
-  $(".words-note-helper").delay(4000).velocity({bottom: '10%'},1000);
+  $(".words-note-helper").delay(6000).velocity({bottom: '10%'},1000);
 
   //hide helper on mousedown
   $(document).on('mousedown', function(){

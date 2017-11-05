@@ -1,6 +1,23 @@
 const passLength = {
-  min: 12,
-  max: 18,
+  min: 9,
+  max: 30,
+
+  _fMin: 9,
+  _fMax: 30,
+  get fMin(){
+    return this._fMin;
+  },
+  set fMin(input){
+    this.min = input - 1;
+    this._fMin = input;
+  },
+  get fMax(){
+    return this._fMax;
+  },
+  set fMax(input){
+    this.max = input - 1;
+    this._fMax = input;
+  },
 };
 
 function sliderStart(){
@@ -18,12 +35,18 @@ function sliderStart(){
    $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + " - " + $( "#slider-range" ).slider( "values", 1 ) );
 };
 
+
+
+
+
+
+
 const makeFancySlider = () => {
   const sliderContent = (`
     <div id="resizable" class="red-slider" style="opacity: 0">
       <div id="min-handle-box" class="ui-resizable-handle ui-resizable-w">
         <div class="min-handle-group">
-          <div id="min-handle-text" class="min-handle-text">8</div>
+          <div id="min-handle-text" class="min-handle-text">9</div>
           <div class="min-handle"></div>
         </div>
       </div>
@@ -45,9 +68,9 @@ const fancySlider = () => {
     let parentWidth = $("#center-box").width();
     let minHandle = $("#min-handle-box");
     let maxHandle = $("#max-handle-box");
-    let minValue = 8;
+    let minValue = 9;
     //defines number of posible password lengths
-    let cellQty = 23;
+    let cellQty = 22;
     let maxValue = 30;
     $( "#resizable" ).resizable({
       handles: {minHandle, maxHandle},
@@ -66,16 +89,16 @@ const fancySlider = () => {
         if(posChange === 0 && sizeChange !== 0) {
           //change max value
           maxValue = maxValue + (-sizeChange / cellSize);
-          console.log((-sizeChange / cellSize));
-          passLength.max = Math.round(maxValue);
-          $("#max-handle-text").text(passLength.max);
+          passLength.fMax = Math.round(maxValue);
+          $("#max-handle-text").text(passLength.fMax);
+          console.log(passLength.fMax, passLength.max);
 
         } else if (posChange !== 0 && sizeChange !== 0){
           //change min value
           minValue = minValue + (-posChange / cellSize);
-          console.log((-posChange / cellSize));
-          passLength.min = Math.round(minValue);
-          $("#min-handle-text").text(passLength.min);
+          passLength.fMin = Math.round(minValue);
+          $("#min-handle-text").text(passLength.fMin);
+          console.log(passLength.fMin, passLength.min);
         };
       },
     });
