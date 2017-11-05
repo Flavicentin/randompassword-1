@@ -7,7 +7,7 @@ var wordLists = [];
 $( document ).ready(function() {
   //activate lenght selection slider
   sliderStart();
-  
+
   $( "#sortable1" ).sortable({
     connectWith: ".connectedSortable",
     receive: function( event, ui ) {
@@ -76,7 +76,7 @@ $( document ).ready(function() {
   });
 
 // Character counter
-  $('body').on('mouseup', function() {
+  $(document).on('mouseup', function() {
     var numChar = $('#sortable3').children().length;
     $('.plength').text("Your password is " + numChar + " characters");
   });
