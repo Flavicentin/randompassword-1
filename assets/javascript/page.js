@@ -76,7 +76,7 @@ $( document ).ready(function() {
     var numChar = $('#sortable3').children().length;
     $('.plength').text("Your password is " + numChar + " characters");
   });
-  /*
+
   $(document).on('dblclick', '.draggable-letter', function() {
     var letter = $(this).text();
     if (letter === letter.toUpperCase()) {
@@ -85,12 +85,11 @@ $( document ).ready(function() {
       $(this).text(letter.toUpperCase());
     }
   });
-  */
 
-  $(document).on('click', '.draggable-letter', function() {
+  $(document).on('touchstart', '.draggable-letter', function() {
     var letter = $(this).text();
     var touchTime = $(this).attr("data-touchTime");
-
+    
     if (touchTime === null || touchTime === '' || touchTime === 0) {
       // set first click
       //touchtime = new Date().getTime();
