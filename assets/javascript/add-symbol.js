@@ -45,8 +45,9 @@ const addSymbol = () => {
       $(this).removeClass('upper-case-letter bounce');
     };
   });
-
+  symbolListener();
   copyToClipboard();
+
 };
 
 const copyToClipboard = () => {
@@ -76,8 +77,43 @@ const copyToClipboard = () => {
     text: function(trigger) {
         return finalPassword;
       }
-    });    
+    });
   });
 };
+
+const symbolListener = () => {
+  //list of symbols and numbers to choose from
+  const symbols = ['!','@','#','$','%','^','&','*','_','(',')','-','0','1','2','3','4','5','6','7','8','9'];
+
+  // add event listener for click on symbol
+  $('.symbol-insert').on('click', function() {
+    //remove symbol group if already existing
+    $(".symbol-select").remove();
+    let clickedSymbol = $(this);
+    clickedSymbol.removeClass('wobble');
+
+    // make and animate helper text to select new symbol
+    $("#main").append(`<div class="symbol-select"></div>`);
+    symbols.forEach(function(currentSymbol){
+      let newSymbolElem = $(`<div class="symbol-select-letter">${currentSymbol}</div>`);
+      $('.symbol-select').append(newSymbolElem);
+    });
+    $(".symbol-select").velocity({top: '40%'},700);
+
+    //when new symbol is clicked replace symbol in password
+    $('.symbol-select-letter').on('click', function(){
+      clickedSymbol.text($(this).text());
+      $(".symbol-select").velocity({top: '50%'},600);
+      setTimeout(function(){
+        $(".symbol-select").remove();
+        clickedSymbol.addClass('wobble');
+        setTimeout(function() {
+          clickedSymbol.removeClass('wobble');
+        }, 600)
+      }, 600);
+    });
+  });
+};
+
 
 export {addSymbol};
