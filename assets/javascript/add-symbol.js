@@ -69,6 +69,14 @@ const copyToClipboard = () => {
     }, 1800);
 
     //INSERT COPY TO CLIPBOARD LOGIC
+    console.log($('.sort-box').children().text());
+
+    let finalPassword = $('.sort-box').children().text();
+    new Clipboard('.copy-to-clipboard', {
+    text: function(trigger) {
+        return finalPassword;
+      }
+    });    
   });
 };
 
