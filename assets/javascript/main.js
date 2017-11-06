@@ -59,9 +59,11 @@ $('document').ready(function() {
   //add words-next event listener,
   $('#main').on("click", '#words-next', function(){
     setTimeout(function(){
+
       //make and animate random symbol interface
       addSymbol();
       $('#password-container').velocity({left: '50%'},1000);
+
     }, 1001);
   });
 

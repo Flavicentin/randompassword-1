@@ -78,7 +78,7 @@ html {
 
 .length-notification {
   position: fixed;
-  top: -10%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 4.5rem;
@@ -216,14 +216,27 @@ html {
 .copy-to-clipboard {
   background-image: url('../images/copy-to-clipboard.svg');
   height: 5rem;
-  width: 40.2rem;
+  width: 37rem;
   background-repeat: no-repeat;
+  background-position: center;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-40%, -50%);
+  transform: translate(-50%, -50%);
   z-index: -4;
   opacity: 1;
+}
+
+.check-mark {
+  background-image: url('../images/check-mark.svg');
+  height: 5rem;
+  width: 5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  left: calc(50% + 16rem);
+  transform: translateX(-50%);
+  z-index: -10;
 }
 
 
@@ -289,5 +302,5 @@ html {
 .bounce {
   animation-name: bounce;
   transform-origin: center bottom;
-  animation-duration: 2s;
+  animation-duration: .5s;
 }

@@ -1,5 +1,5 @@
 const passLength = {
-  min: 9,
+  min: 8,
   max: 30,
 
   _fMin: 9,
@@ -115,11 +115,11 @@ const noteAnimation = () => {
   minMaxListener('max');
 
   //animate choose length notification
-  $(".length-notification").delay(3000).velocity({top: '50%'}, 3000);
-  $(".length-notification").delay(1000).velocity({top: '120%'}, 3000);
+  $(".length-notification").delay(5000).velocity({top: '50%'}, 1000);
+  $(".length-notification").delay(1000).velocity({top: '80%'}, 1000);
   setTimeout(function(){
     $(".length-notification").remove();
-  }, 10000);
+  }, 8000);
 
   //length helper notification
   $("#main").append(`<div class="length-note-helper">slide the 'min' and 'max' arrows, then press next</div>`);
@@ -143,6 +143,7 @@ const minMaxListener = (minOrMax) => {
     //next button event listener
     $("#slider-next").on('click', function(){
       $(".slider-next").velocity({opacity: '0'}, 1000);
+      console.log("min,max",passLength.min, passLength.max);
       setTimeout(function() {
         $("#slider-next").remove();
       }, 1001);

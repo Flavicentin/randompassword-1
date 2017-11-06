@@ -39,10 +39,10 @@ const addSymbol = () => {
     if (clickedLetter === clickedLetter.toLowerCase()) {
       // if upper case
       $(this).text($(this).text().toUpperCase());
-      $(this).addClass('upper-case-letter');
+      $(this).addClass('upper-case-letter bounce');
     } else {
       $(this).text($(this).text().toLowerCase());
-      $(this).removeClass('upper-case-letter');
+      $(this).removeClass('upper-case-letter bounce');
     };
   });
 
@@ -59,7 +59,16 @@ const copyToClipboard = () => {
 
   //add event listenr to button to copy to clipboard
   $('.copy-to-clipboard').on('click', function() {
+    //check mark
+    let checkMark = $(`<div class="check-mark"></div>`);
+    copyButton.append(checkMark);
+    checkMark.velocity({left: '+=7rem'}, 500);
+    checkMark.delay(800).velocity({opacity: '0'}, 500);
+    setTimeout(function(){
+      checkMark.remove();
+    }, 1800);
 
+    //INSERT COPY TO CLIPBOARD LOGIC
   });
 };
 
