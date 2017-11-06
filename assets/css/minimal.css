@@ -35,6 +35,11 @@ html {
   white-space: nowrap;
 }
 
+.red-slider {
+  height: 100%;
+  background-color: red;
+}
+
 .min-handle {
   background-image: url('../images/min-handle.svg');
   height: 8rem;
@@ -239,6 +244,24 @@ html {
   z-index: -10;
 }
 
+.symbol-select {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.75rem;
+  color: red;
+  z-index: -10;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.symbol-select-letter {
+  padding: 0 .1rem 0 .1rem;
+}
+
 
 /* from animate.css*/
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
@@ -275,7 +298,7 @@ html {
 
 .wobble {
   animation-name: wobble;
-  animation-duration: 2s;
+  animation-duration: .5s;
 }
 
 @keyframes bounce {
