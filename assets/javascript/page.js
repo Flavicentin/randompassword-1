@@ -86,6 +86,35 @@ $( document ).ready(function() {
     }
   });
 
+  $(document).bind('touchstart', '.draggable-letter', function() {
+    var letter = $(this).text();
+    var touchTime = $(this).attr("data-touchTime");
+
+    if (touchTime === null || touchTime === '' || touchTime === 0) {
+      // set first click
+      //touchtime = new Date().getTime();
+      $(this).attr("data-touchTime", new Date().getTime());
+    } else {
+      // compare first click to this click and see if they occurred within double click threshold
+      if (((new Date().getTime()) - touchTime) < 800) {
+        // double click occurred
+        
+        if (letter === letter.toUpperCase()) {
+          $(this).text(letter.toLowerCase());
+        } else {
+          $(this).text(letter.toUpperCase());
+        }
+
+        //touchtime = 0;
+        $(this).attr("data-touchTime", 0);
+      } else {
+        // not a double click so set as a new first click
+        //touchtime = new Date().getTime();
+        $(this).attr("data-touchTime", new Date().getTime());
+      }
+    }
+  });
+
 });
 
 function setDrumWords(min, max, num) {
