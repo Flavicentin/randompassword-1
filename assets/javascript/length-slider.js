@@ -1,6 +1,6 @@
 const passLength = {
   min: 8,
-  max: 30,
+  max: 29,
 
   _fMin: 9,
   _fMax: 30,
@@ -106,20 +106,22 @@ const fancySlider = () => {
   };
 
 const noteAnimation = () => {
-  //make choose length notification
-  $("#main").append(`<div class="length-notification">choose password length</div>`);
 
   //next button appears on mouseup
   $("#main").append(`<div id="slider-next" class="slider-next"></div>`);
   minMaxListener('min');
   minMaxListener('max');
 
-  //animate choose length notification
-  $(".length-notification").delay(5000).velocity({top: '50%'}, 1000);
-  $(".length-notification").delay(1000).velocity({top: '80%'}, 1000);
-  setTimeout(function(){
-    $(".length-notification").remove();
-  }, 8000);
+  //make choose length notification
+  setTimeout(function() {
+    $("#main").append(`<div class="length-notification">choose password length</div>`);
+    //animate choose length notification
+    $(".length-notification").velocity({top: '50%'}, 1000);
+    $(".length-notification").delay(1000).velocity({top: '80%'}, 1000);
+    setTimeout(function(){
+      $(".length-notification").remove();
+    }, 3000);
+  }, 5000);
 
   //length helper notification
   $("#main").append(`<div class="length-note-helper">slide the 'min' and 'max' arrows, then press next</div>`);
