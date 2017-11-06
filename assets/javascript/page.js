@@ -86,10 +86,10 @@ $( document ).ready(function() {
     }
   });
 
-  $(document).on('touchstart', '.draggable-letter', function() {
+  $(document).bind('touchstart', '.draggable-letter', function() {
     var letter = $(this).text();
     var touchTime = $(this).attr("data-touchTime");
-    
+
     if (touchTime === null || touchTime === '' || touchTime === 0) {
       // set first click
       //touchtime = new Date().getTime();
