@@ -25,11 +25,15 @@ $('document').ready(function() {
 
   //start slider functionality, animate slider fade in
   fancySlider();
-  $(".red-slider").delay(4000).velocity({opacity: 1}, 2000);
 
   //animates notifications and adds next button
   noteAnimation();
     //noteAnimation's next button triggers removal of slider
+    
+  //animate in slider
+  $(".red-slider").delay(4000).velocity({opacity: 1}, 2000);
+
+
 
   //event listener for slider-next click, triggers word select
   $('#slider-next').on("click", function(){

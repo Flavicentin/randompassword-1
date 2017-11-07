@@ -86,7 +86,7 @@ const symbolListener = () => {
   const symbols = ['!','@','#','$','%','^','&','*','_','(',')','-','0','1','2','3','4','5','6','7','8','9'];
 
   // add event listener for click on symbol
-  $('.symbol-insert').on('click', function() {
+  $('#main').on('click','.symbol-insert', function() {
     //remove symbol group if already existing
     $(".symbol-select").remove();
     let clickedSymbol = $(this);
@@ -98,6 +98,32 @@ const symbolListener = () => {
       let newSymbolElem = $(`<div class="symbol-select-letter">${currentSymbol}</div>`);
       $('.symbol-select').append(newSymbolElem);
     });
+    //make 'add' button
+    let addButton = $(`<div id="add-button" class="add-symbol"></div>`);
+    $('.symbol-select').append(addButton);
+
+    //add button event listener
+    addButton.on('click', function() {
+      $(".symbol-select").velocity({top: '50%'},600);
+
+      //make and insert random symbol into random spot
+      let chosenLetters = $('.array-letter');
+      const randomSpot = () => {
+        return Math.floor(Math.random() * chosenLetters.length);
+      };
+
+      let autoSymbol = $(`<div class='symbol-insert wobble'>${selectedWords.defaultSymbol}</div>`);
+      //insert random symbol
+      $(chosenLetters[randomSpot()]).after(autoSymbol);
+
+      //remove select symbols
+      setTimeout(function(){
+        $(".symbol-select").remove();
+        $('.symbol-insert').removeClass('wobble');
+      }, 600);
+    });
+
+    //annimate in symbols
     $(".symbol-select").velocity({top: '40%'},700);
 
     //when new symbol is clicked replace symbol in password
@@ -109,11 +135,13 @@ const symbolListener = () => {
         clickedSymbol.addClass('wobble');
         setTimeout(function() {
           clickedSymbol.removeClass('wobble');
-        }, 600)
+        }, 600);
       }, 600);
     });
+
   });
 };
+
 
 
 export {addSymbol};
