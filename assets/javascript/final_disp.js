@@ -13,6 +13,19 @@ function disp(numDrums){
   }
   var numChar = $('#sortable3').children().length;
   $('.plength').text("Your password is " + numChar + " characters");
+
+  var sortableLetters = $('.draggable-letter');
+  for (var i = 0; i < sortableLetters.length; i++) {
+  	Hammer(sortableLetters[i]).on('doubletap', function(event) {
+  	  var letter = $(this).text();
+      if (letter === letter.toUpperCase()) {
+      	$(this).text(letter.toLowerCase());
+      } else {
+        $(this).text(letter.toUpperCase());
+      }
+  	});
+  }
+
 };
 
 var Str;
