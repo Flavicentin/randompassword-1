@@ -139,8 +139,11 @@ const removeFancySlider = () => {
 };
 
 const minMaxListener = (minOrMax) => {
-  $(`.${minOrMax}-handle`).on('mouseup', function(){
-    $(".slider-next").velocity({opacity: '1'}, 1000);
+  $(`.${minOrMax}-handle`).on('mousedown', function(){
+    $(document).on('mouseup', function() {
+      $(".slider-next").velocity({opacity: '1'}, 1000);
+    });
+
 
     //next button event listener
     $("#slider-next").on('click', function(){
