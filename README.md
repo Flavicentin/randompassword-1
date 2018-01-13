@@ -12,15 +12,18 @@ jQuery <br>
 Google Fonts <br>
 Clipboard.js <br>
 Animate.css <br>
-Bootstrap <br>
 Git / Github <br>
 Javascript ES6 <br>
 
 ### about this project
-
+We all make trade offs with our passwords between ease of use and security. The goal of this project is to make it easier to create and use unique passwords for every new login.
+<br><br>
+The method for making strong passwords using randomly selected words and inserting a random symbol was inspired by this [computerfile video](https://www.youtube.com/watch?v=3NjQ9b3pgIg).
+<br><br>
+This project was presented at a Hack and Tell event. I took a quick poll of a room full of developers and hackers of who uses the same password for everything. And, a surprising number of hands went up. Everyone needs a better way to create and handle online security!
 
 ### code
-This frontend project was completed in a week with a small team. ES6 modules were used so that contributors could work on it simultaneously without merge conflicts. Those modules come together easily: using principles of functional programing the app executes using only a few functions in the [main js](#main.js) file.
+This frontend project was completed in a week with a small team. ES6 modules were used so that contributors could work on it simultaneously without merge conflicts. Those modules come together easily: using some of the principles of functional programing the app executes using only a few easy to interpret functions in the [main js](#main.js) file.
 <br>
 The [intro animation](#intro-animation) is a nice visual metaphor for the random-ness of the password that will be generated.
 
@@ -41,10 +44,6 @@ const startOpening = () => {
       let speed = (Math.random() * 1000);
       $(`#${i}`).delay(speed).velocity({top: '110%'}, 'slow');
     };
-  }, 3000);
-  setTimeout(function() {
-    $(".letter-container").remove();
-  }, 6000);
 };
 ```
 
